@@ -16,18 +16,18 @@ function resize() {
 	}
 }
 
-function setupStickyHeader() {
-	const $header = $body.select('header');
-	if ($header.classed('is-sticky')) {
-		const $menu = $body.select('.header__menu');
-		const $toggle = $body.select('.header__toggle');
-		$toggle.on('click', () => {
-			const visible = $menu.classed('is-visible');
-			$menu.classed('is-visible', !visible);
-			$toggle.classed('is-visible', !visible);
-		});
-	}
-}
+// function setupStickyHeader() {
+// 	const $header = $body.select('header');
+// 	if ($header.classed('is-sticky')) {
+// 		const $menu = $body.select('.header__menu');
+// 		const $toggle = $body.select('.header__toggle');
+// 		$toggle.on('click', () => {
+// 			const visible = $menu.classed('is-visible');
+// 			$menu.classed('is-visible', !visible);
+// 			$toggle.classed('is-visible', !visible);
+// 		});
+// 	}
+// }
 
 function init() {
 	// add mobile class to body tag
@@ -35,7 +35,7 @@ function init() {
 	// setup resize event
 	window.addEventListener('resize', debounce(resize, 150));
 	// setup sticky header menu
-	setupStickyHeader();
+	// setupStickyHeader();
 	// kick off graphic code
 	graphic.init();
 }
