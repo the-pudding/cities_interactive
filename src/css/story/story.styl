@@ -1,7 +1,136 @@
-/* CUSTOM STORY STYLE */
+.screen
+  height 100vh
+  width 100vw
+  position absolute
+  top 0px
+  left 0px
+  pointer-events none
+  background linear-gradient(180deg, rgb(134, 153, 158) 0%, rgba(134, 153, 158,.1) 30%, rgba(0,0,0,0) 100%)
+  transform translate3d(0,0,0)
+  z-index 10
+.mapboxgl-compare
+  display none
+.top-header
+  position absolute
+  top 0px
+  left 0px
+  width 100%
+  display flex
+  justify-content center
+  z-index 1000
+  .top-toggles
+    display flex
+    justify-content center
+    p
+      margin 0px
+      padding 10px 20px
+      font-family 'Atlas Grotesk Web'
+      background #2A2A2A
+      color rgba(255,255,255,.6)
+      font-weight 400
+      font-size 14px
+      height 20px
+      box-shadow 0px 0px 8px 1px rgba(0, 0, 0, 0.29)
+      &:nth-of-type(2)
+        position relative
+        &:after
+          width 100%
+          content 'Latest Data from 2015'
+          font-size 11px
+          position absolute
+          left 0px
+          right 0px
+          bottom 0px
+          margin 0 auto
+          text-align center
+          background #f6f7f7
+          transform translate(0px, 100%)
+          padding 3px 0px
+          border-bottom-right-radius 5px
+          border-bottom-left-radius 5px
+          font-weight 400
+          box-shadow 0px 2px 4px 0px rgba(0, 0, 0, 0.2784313725490196)
+      &:nth-of-type(1)
+        border-bottom-left-radius 5px
+      &:nth-of-type(3)
+        border-bottom-right-radius 5px
+    .top-toggle-active
+      background white
+      color black
+      font-weight 500
+      font-size 18px
+      padding 10px 20px
+      box-shadow none
 
+
+
+  .logo
+    position absolute
+    top 0rem
+    right 1.5rem
+    width 110px
+    svg
+      width 100%
+      fill white
+
+.extended
+  .before-toggles
+    width 6px
+    height 100vh
+    background white
+    position absolute
+    right 0px
+    box-shadow 0px 0px 3px 1px rgba(0, 0, 0, 0.21)
+    z-index 100
+    transform translate(50%,0px)
+    .before-present-toggles
+      position absolute
+      top 50%
+      right 0px
+      transform translate(100%, -50%)
+      .before-present-toggle
+        font-family 'Atlas Grotesk Web'
+        padding 5px 5px
+        background #2A2A2A
+        color #AAAAAA
+        margin 0px
+    .before-historic-toggles
+      position absolute
+      top 50%
+      left 0px
+      height 1px
+      transform translate(-100%,0px)
+      .before-historic-toggle
+        margin 0px
+        padding 5px 5px
+        transform translate(0px,-50%)
+        background #2A2A2A
+        color #AAAAAA
+    .before-historic-toggles, .before-present-toggles
+      .before-toggle-active
+        background white
+        color black
+
+
+
+.before-map-container
+  height 100vh
+  position relative
+  width 0px
+  .compare-button
+    position absolute
+    top 50%
+    right 0px
+    transform translate(100%,-50%)
+    z-index 1000
+    background black
+    color white
+    padding 1rem
 #content
   display flex
+
+.compare-swiper
+  display none
 
 .toggles
   position absolute
@@ -10,6 +139,9 @@
   width 100px
   z-index 100
   background white
+  .years
+    p
+      margin 0
 
 .population
   position absolute
@@ -17,9 +149,57 @@
   bottom 0
   right 0
 
-.map
+.map-container
+  display flex
+
+.compare
   position absolute
-  top 0
   bottom 0
-  width 100%
+  left 0
+  z-index 100
+
+.before-map-container, .map, .mapboxgl-canvas, .mapboxgl-canvas-container
+  user-select none
+  outline none
+  &:focus
+    outline none
+    user-select none
+
+.map
   height 100vh
+  -webkit-touch-callout none
+  -webkit-user-select none
+  -khtml-user-select none
+  -moz-user-select none
+  -ms-user-select none
+  user-select none
+
+
+#main-map
+  flex-grow 1
+
+
+#compare-map
+  width 100%
+
+body { margin:0; padding:0; }
+#map { position:absolute; top:0; bottom:0; width:100%; }
+
+body {
+    overflow: hidden;
+}
+
+body * {
+   -webkit-touch-callout: none;
+     -webkit-user-select: none;
+        -moz-user-select: none;
+         -ms-user-select: none;
+             user-select: none;
+}
+
+.map {
+    position: relative;
+    display: inline-block;
+    //width: 50%;
+
+}

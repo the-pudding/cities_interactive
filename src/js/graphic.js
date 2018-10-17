@@ -13,72 +13,105 @@ function resize() {}
 function init() {
 
 	//
-	mapboxgl.accessToken = 'pk.eyJ1IjoiZG9jazQyNDIiLCJhIjoiY2pjazE5eTM2NDl2aDJ3cDUyeDlsb292NiJ9.Jr__XbmAolbLyzPDj7-8kQ';
 
-	var layerMadeVisible = false;
+	var layerMadeVisible = "2015-gte-20-limited";
 
 	var makeMap = true;
 	var map;
+	var compareMap;
+	var beforeContainer  = d3.select(".before-map-container");
+	var deltaModeOn = false;
+	var compareModeOn = false;
+	var presentModeOn = true;
+
+	function changeView(view){
+
+		if(view == "compare-button"){
+			map.resize();
+			beforeContainer.classed("extended",true);
+			beforeContainer.transition().duration(200).style("width","50%").on("end",function(d){
+				compareModeOn = true;
+				makeCompareMap();
+				map.resize();
+			});
+		}
+		else if(compareModeOn) {
+			beforeContainer.classed("extended",false);
+			beforeContainer.transition().duration(200).style("width","0%").on("end",function(d){
+				compareModeOn = false;
+				// compareMap.remove();
+				map.resize();
+			});
+		}
+
+		if(view == "delta-button"){
+			deltaModeOn = true;
+			map.setLayoutProperty("delta-1990-2015-limited", 'visibility', 'visible');
+			map.setLayoutProperty("neg-test-5", 'visibility', 'visible');
+		}
+		else{
+			deltaModeOn = false;
+			if(view != "compare-button"){
+				map.setLayoutProperty("delta-1990-2015-limited", 'visibility', 'none');
+				map.setLayoutProperty("neg-test-5", 'visibility', 'none');
+			}
+		}
+
+		if(view == "present-button"){
+			presentModeOn = true;
+			map.setLayoutProperty("2015-gte-20-limited", 'visibility', 'visible');
+		}
+		else{
+			presentModeOn = false;
+			if(view != "compare-button"){
+				map.setLayoutProperty("2015-gte-20-limited", 'visibility', 'none');
+			}
+		}
+
+
+	}
+
 	function createToggles(){
-		var container = d3.select(".toggles");
 
-		container
-			.append("div")
-			.attr("class","years")
-			.selectAll("p")
-			.data([1975,1990,2000,2015])
-			.enter()
-			.append("p")
-			.text(function(d){
-				return d;
-			})
-			.on("click",function(d){
-				if(!layerMadeVisible){
-					layerMadeVisible = d+"-gte-20-limited";
-				}
-				else{
-					map.setLayoutProperty(layerMadeVisible, 'visibility', 'none');
-				}
-				layerMadeVisible = d+"-gte-20-limited";
-				map.setLayoutProperty(layerMadeVisible, 'visibility', 'visible');
-				// map.setPaintProperty(layerMadeVisible, 'fill-extrusion-opacity', 1);
-				map.setLayoutProperty("all-5k", 'visibility', 'none');
-				map.setLayoutProperty("all-1k", 'visibility', 'none');
+		var topTogglesContainer = d3.select(".top-toggles");
 
-			})
-			;
+		topTogglesContainer.selectAll("p").on("click",function(d){
+			changeView(d3.select(this).attr("class"));
+		})
+	}
 
-		container
-			.append("div")
-			.attr("class","deltas")
-			.selectAll("p")
-			.data(["delta-1990-2015"])
-			.enter()
-			.append("p")
-			.text(function(d){
-				return d;
-			})
-			.on("click",function(d){
-				if(!layerMadeVisible){
-					layerMadeVisible = d+"-limited";
-				}
-				else {
-					map.setLayoutProperty(layerMadeVisible, 'visibility', 'none');
-				}
-				layerMadeVisible = d+"-limited";
-				map.setLayoutProperty(layerMadeVisible, 'visibility', 'visible');
-				// map.setPaintProperty(layerMadeVisible, 'fill-extrusion-opacity', 1);
-				map.setLayoutProperty("all-5k", 'visibility', 'none');
-				map.setLayoutProperty("all-1k", 'visibility', 'none');
-			})
-			;
+	function makeCompareMap(){
+
+		compareMap = new mapboxgl.Map({
+			container: 'compare-map',
+			// style: 'mapbox://styles/mapbox/dark-v9',
+			style: 'mapbox://styles/dock4242/cjn6mkymw1f5u2sp7uf9gs39o?optimize=true',
+			center: [-122.050,37.511],
+			zoom: 8,
+			pitch: 60, // pitch in degrees
+			bearing: 0, // bearing in degrees
+		});
+
+		compareMap.on("load",function(d){
+			compareMap.setLayoutProperty("2015-gte-20-limited", 'visibility', 'none');
+			compareMap.setLayoutProperty("1990-gte-20-limited", 'visibility', 'visible');
+
+			var combinedMap = new mapboxgl.Compare(map, compareMap, {
+					// Set this to enable comparing two maps by mouse movement:
+					// mousemove: true
+			});
+		})
+
 
 	}
 
 
 	if(makeMap){
+		mapboxgl.accessToken = 'pk.eyJ1IjoiZG9jazQyNDIiLCJhIjoiY2pjazE5eTM2NDl2aDJ3cDUyeDlsb292NiJ9.Jr__XbmAolbLyzPDj7-8kQ';
 
 		function getPopulation(){
+
+			console.log("fetching population");
 
 			var bounds = map.getBounds();
 
@@ -129,57 +162,45 @@ function init() {
 			})
 
 		}
-		//
+
+
 		map = new mapboxgl.Map({
-			container: 'before',
-			style: 'mapbox://styles/dock4242/cjma1k7135xfl2smsicki0ned',
+			container: 'main-map',
+			//style: 'mapbox://styles/mapbox/light-v9',
+			style: 'mapbox://styles/dock4242/cjn6mkymw1f5u2sp7uf9gs39o?optimize=true',
 			center: [-122.050,37.511],
 			zoom: 8,
 			pitch: 60, // pitch in degrees
 			bearing: 0, // bearing in degrees
 		});
 
-		// var afterMap = new mapboxgl.Map({
-		// 	container: 'after',
-		// 	style: 'mapbox://styles/dock4242/cjma1k7135xfl2smsicki0ned',
-		// 	center: [-122.050,37.511],
-		// 	zoom: 8,
-		// 	pitch: 0, // pitch in degrees
-		// 	bearing: 0, // bearing in degrees
-		// });
+
 		//
-		// var map = new mapboxgl.Compare(beforeMap, afterMap, {
+		// var combinedMap = new mapboxgl.Compare(map, afterMap, {
 		//     // Set this to enable comparing two maps by mouse movement:
 		//     // mousemove: true
 		// });
 
 
-		// const map = new mapboxgl.Map({
-		// 	container: 'map',
-		// 	style: 'mapbox://styles/dock4242/cjma1k7135xfl2smsicki0ned',
-		// 	center: [-122.050,37.511],
-		// 	zoom: 8,
-		// 	pitch: 0, // pitch in degrees
-		// 	bearing: 0, // bearing in degrees
-		// });
-		//
-		// map.scrollZoom.disable();
-		//
 		map.on('load',function(){
+			// map.setLayoutProperty("all-5k", 'visibility', 'none');
+			// map.setLayoutProperty("all-1k", 'visibility', 'none');
+			// map.setLayoutProperty("2015-gte-20-limited", 'visibility', 'visible');
 
-			getPopulation();
+			// getPopulation();
 
 		});
 
+		//get population function
 		map.on('moveend',function(){
+
 			// console.log("here");
-			getPopulation();
+			// getPopulation();
 
 		});
 
 	}
 	createToggles();
-
 }
 
 export default { init, resize };
