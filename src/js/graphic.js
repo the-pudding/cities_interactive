@@ -79,13 +79,12 @@ function init() {
 			changeView(d3.select(this).attr("class"));
 		})
 	}
-
 	function makeCompareMap(){
 
 		compareMap = new mapboxgl.Map({
 			container: 'compare-map',
 			// style: 'mapbox://styles/mapbox/dark-v9',
-			style: 'mapbox://styles/dock4242/cjn6mkymw1f5u2sp7uf9gs39o?optimize=true',
+			style: 'mapbox://styles/dock4242/cjnel8krq2ltq2spteciqe2x3?optimize=true',
 			center: [-122.050,37.511],
 			zoom: 8,
 			pitch: 60, // pitch in degrees
@@ -167,7 +166,7 @@ function init() {
 		map = new mapboxgl.Map({
 			container: 'main-map',
 			//style: 'mapbox://styles/mapbox/light-v9',
-			style: 'mapbox://styles/dock4242/cjn6mkymw1f5u2sp7uf9gs39o?optimize=true',
+			style: 'mapbox://styles/dock4242/cjnel8krq2ltq2spteciqe2x3?optimize=true',
 			center: [-122.050,37.511],
 			zoom: 8,
 			pitch: 60, // pitch in degrees

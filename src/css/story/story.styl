@@ -1,3 +1,44 @@
+.tour-container
+  position absolute
+  z-index 100
+  bottom 0px
+  left 2rem
+  padding 1rem 1rem
+  background rgba(0,0,0,.5)
+  color white
+  min-width 200px
+  display flex
+  flex-wrap wrap
+  .tour-text-container
+    width 100%
+    .tour-text
+      color white
+      font-family 'Atlas Grotesk Web'
+      font-size 14px
+      font-weight 400
+      margin 0px
+  .tour-toggle
+    display flex
+    flex-grow 1
+    .tour-toggle-text
+      width 100%
+      display flex
+      font-family 'Atlas Grotesk Web'
+      .tour-toggle-text-current
+        margin 0px
+      .tour-toggle-text-amount
+        margin 0px
+  .tour-button
+    border-radius 5px
+    font-family 'Atlas Grotesk Web'
+    background rgba(0,0,0,.5)
+    color white
+    font-size 13px
+    font-weight 500
+    padding 5px 5px
+    margin 0px
+
+
 .screen
   height 100vh
   width 100vw
@@ -27,9 +68,10 @@
       font-family 'Atlas Grotesk Web'
       background #2A2A2A
       color rgba(255,255,255,.6)
-      font-weight 400
+      font-weight 500
       font-size 14px
-      height 20px
+      display block
+      height 45px
       box-shadow 0px 0px 8px 1px rgba(0, 0, 0, 0.29)
       &:nth-of-type(2)
         position relative
@@ -69,6 +111,8 @@
     top 0rem
     right 1.5rem
     width 110px
+    text-decoration none
+    border none
     svg
       width 100%
       fill white
@@ -146,8 +190,14 @@
 .population
   position absolute
   z-index 100
-  bottom 0
-  right 0
+  top .6rem
+  left 1rem
+  p
+    font-family 'Atlas Grotesk Web'
+    font-size 14px
+    color white
+    font-weight 500
+    margin 0px
 
 .map-container
   display flex
