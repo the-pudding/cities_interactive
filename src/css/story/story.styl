@@ -1,3 +1,17 @@
+
+.delta-map-container
+  position absolute
+  top 0px
+  right 0px
+  height 100vh
+  width 100vw
+  transform translate(100%,0%)
+  pointer-events none
+  background rgb(201, 208, 209)
+  #delta-map
+    width 100%
+    pointer-events all
+    background #c9d0d1
 .tour-container
   position absolute
   z-index 100
@@ -6,11 +20,29 @@
   padding 1rem 1rem
   background rgba(0,0,0,.5)
   color white
-  min-width 200px
+  max-width 250px
   display flex
   flex-wrap wrap
+  justify-content space-between
+  .tour-hide
+    position absolute
+    top 0px
+    left 0px
+    z-index 100
+    transform translate(20px, -100%)
+    background rgba(0,0,0,.5)
+    height 20px
+    padding 0px 5px
+    border-top-left-radius 5px
+    border-top-right-radius 5px
+    .tour-hide-arrow
+      width 25px
+      div
+        svg
+          width 100%
   .tour-text-container
     width 100%
+    margin-bottom 15px
     .tour-text
       color white
       font-family 'Atlas Grotesk Web'
@@ -19,13 +51,25 @@
       margin 0px
   .tour-toggle
     display flex
-    flex-grow 1
+    .tour-toggle-right, .tour-toggle-left
+      height 20px
+      width 20px
+      margin-top 1px
+      div
+        svg
+          width 100%
     .tour-toggle-text
-      width 100%
-      display flex
       font-family 'Atlas Grotesk Web'
+      .tour-toggle-text-current, .tour-toggle-text-amount
+        font-size 13px
+        font-weight 500
+        color rgba(255,255,255,.7)
+        display inline-block
       .tour-toggle-text-current
         margin 0px
+        font-weight 600
+        color rgba(255,255,255,1)
+        margin-right 0px
       .tour-toggle-text-amount
         margin 0px
   .tour-button
@@ -35,7 +79,7 @@
     color white
     font-size 13px
     font-weight 500
-    padding 5px 5px
+    padding 5px 15px
     margin 0px
 
 
@@ -62,54 +106,76 @@
   .top-toggles
     display flex
     justify-content center
-    p
-      margin 0px
-      padding 10px 20px
-      font-family 'Atlas Grotesk Web'
-      background #2A2A2A
-      color rgba(255,255,255,.6)
-      font-weight 500
-      font-size 14px
-      display block
-      height 45px
-      box-shadow 0px 0px 8px 1px rgba(0, 0, 0, 0.29)
-      &:nth-of-type(2)
-        position relative
-        &:after
-          width 100%
-          content 'Latest Data from 2015'
-          font-size 11px
-          position absolute
-          left 0px
-          right 0px
-          bottom 0px
-          margin 0 auto
-          text-align center
-          background #f6f7f7
-          transform translate(0px, 100%)
-          padding 3px 0px
-          border-bottom-right-radius 5px
-          border-bottom-left-radius 5px
-          font-weight 400
-          box-shadow 0px 2px 4px 0px rgba(0, 0, 0, 0.2784313725490196)
-      &:nth-of-type(1)
+    div
+      cursor hand
+      cursor pointer
+      p
+        transition all .1s
+      .top-toggle-active
+        background white
+        color black
+        font-weight 500
+        font-size 18px
+        padding 10px 20px
+        box-shadow none
         border-bottom-left-radius 5px
-      &:nth-of-type(3)
         border-bottom-right-radius 5px
-    .top-toggle-active
-      background white
-      color black
-      font-weight 500
-      font-size 18px
-      padding 10px 20px
-      box-shadow none
+        height 53px
+      p:not(.top-toggle-active)
+        &:hover
+          color #4c4c4c
+          background #ccc
+          box-shadow none
+          transition all .05s
+      &:nth-of-type(2)
+        .top-toggle-active
+          height auto
+          border-bottom-left-radius 0px
+          border-bottom-right-radius 0px
+          position relative
+          &:after
+            width 100%
+            content 'Latest Data from 2015'
+            font-size 11px
+            position absolute
+            left 0px
+            right 0px
+            bottom 0px
+            margin 0 auto
+            text-align center
+            background #f6f7f7
+            transform translate(0px, 100%)
+            padding 3px 0px
+            border-bottom-right-radius 5px
+            border-bottom-left-radius 5px
+            font-weight 400
+            box-shadow 0px 2px 4px 0px rgba(0, 0, 0, 0.2784313725490196)
+      p
+        margin 0px
+        padding 10px 20px
+        font-family 'Atlas Grotesk Web'
+        background #2A2A2A
+        color rgba(255,255,255,.6)
+        font-weight 500
+        font-size 14px
+        display block
+        height 45px
+        box-shadow 0px 0px 8px 1px rgba(0, 0, 0, 0.29)
+
+      &:nth-of-type(1)
+        p
+          border-bottom-left-radius 5px
+      &:nth-of-type(3)
+        p
+          border-bottom-right-radius 5px
+
 
 
 
   .logo
     position absolute
     top 0rem
-    right 1.5rem
+    left 1.5rem
     width 110px
     text-decoration none
     border none
@@ -191,7 +257,7 @@
   position absolute
   z-index 100
   top .6rem
-  left 1rem
+  right 1rem
   p
     font-family 'Atlas Grotesk Web'
     font-size 14px

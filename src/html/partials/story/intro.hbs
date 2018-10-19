@@ -4,9 +4,9 @@
 		@@include('logo.svg')
 	</a>
 	<div class="top-toggles">
-		<p class="compare-button">Compare to 1990</p>
-		<p class="present-button top-toggle-active">Present Day</p>
-		<p class="delta-button">Growth, 1990-2015</p>
+		<div id="compare-button"><p>Compare to 1990</p></div>
+		<div id="present-button"><p class="top-toggle-active">Present Day</p></div>
+		<div id="delta-button"><p>Change, 1990-2015</p></div>
 	</div>
 </div>
 <div class="screen">
@@ -29,6 +29,10 @@
 		<div id='compare-map' class='map'></div>
 	</div>
 	<div id='main-map' class='map'></div>
+	<div class="delta-map-container">
+		<div id='delta-map' class="map">
+		</div>
+	</div>
 </div>
 
 <div class="toggles">
@@ -38,18 +42,26 @@
 	<p>100 million people</p>
 </div>
 
+<div class="delta-map-container">
+	<div class="delta-map">
+
+	</div>
+</div>
+
 <div class="tour-container">
 	<div class="tour-hide">
 		<div class="tour-hide-arrow">
+			<div>@@include('chevron-down.svg')</div>
 		</div>
 	</div>
 	<div class="tour-text-container">
-		<p class="tour-text">text text here.</p>
+		<p class="tour-text">Something about world cities.</p>
 	</div>
-	<div class="tour-button">text button
+	<div class="tour-button">Fly to Kinshasa
 	</div>
 	<div class="tour-toggle">
 		<div class="tour-toggle-left">
+			<div>@@include('chevron-left.svg')</div>
 		</div>
 		<div class="tour-toggle-text">
 			<p class="tour-toggle-text-current">1
@@ -58,6 +70,7 @@
 			</p>
 		</div>
 		<div class="tour-toggle-right">
+			<div>@@include('chevron-right.svg')</div>
 		</div>
 	</div>
 </div>
