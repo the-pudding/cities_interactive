@@ -103,9 +103,11 @@
   bottom 0px
   left 2rem
   padding 1rem 1rem
-  background rgba(0,0,0,.8)
-  color white
-  max-width 340px
+  //background rgba(0,0,0,.75)
+  background rgba(255,255,255,1)
+  box-shadow -1px -1px 3px 1px rgba(0, 0, 0, 0.1)
+  color black
+  max-width 312px
   border-top-left-radius 5px
   border-top-right-radius 5px
   display flex
@@ -118,7 +120,9 @@
     left 0px
     z-index 100
     transform translate(20px, -100%)
-    background rgba(0,0,0,.8)
+    //background rgba(0,0,0,.75)
+    background rgba(255,255,255,1)
+    box-shadow 0px -2px 3px 1px rgba(0, 0, 0, 0.1)
     height 20px
     padding 0px 5px
     border-top-left-radius 5px
@@ -132,6 +136,7 @@
       div
         svg
           width 100%
+          stroke white
     .tour-hide-arrow
       width 25px
       div
@@ -141,42 +146,52 @@
     width 100%
     margin-bottom 15px
     .tour-text
-      color white
+      color black
       font-family 'Atlas Grotesk Web'
       font-size 12px
-      font-weight 500
+      font-weight 400
       margin 0px
+      b
+        font-weight 600
   .tour-toggle
     display flex
     .tour-toggle-right, .tour-toggle-left
       height 20px
       width 20px
       margin-top 1px
+      cursor pointer
+      cursor hand
+      &:hover
+        div
+          svg
+            stroke #000
       div
         svg
           width 100%
+          stroke #999
     .tour-toggle-text
       font-family 'Atlas Grotesk Web'
       .tour-toggle-text-current, .tour-toggle-text-amount
         font-size 13px
-        font-weight 500
-        color rgba(255,255,255,1)
+        font-weight 400
+        color black
         display inline-block
       .tour-toggle-text-current
         margin 0px
-        font-weight 600
-        color rgba(255,255,255,1)
+        font-weight 500
+        color black
         margin-right 0px
       .tour-toggle-text-amount
         margin 0px
   .tour-button
     border-radius 5px
     font-family 'Atlas Grotesk Web'
-    background rgba(0,0,0,1)
-    color white
+    background #d8d8d8
+    color #333
     font-size 11px
     letter-spacing .5px
     font-weight 600
+    border-bottom 3px solid #8c8c8c
     padding 9px 15px
     margin 0px
     position relative
@@ -186,7 +201,7 @@
     cursor hand
     cursor pointer
     &:hover
-      background #304b4c
+      background #bdbdbd
     &:after
       position absolute
       content '✈️'

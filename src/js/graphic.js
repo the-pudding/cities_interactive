@@ -34,7 +34,14 @@ function setupMap(startCoords) {
 	var tourStop = 0;
 	var tourObject = [
 		{
-			text:"First let’s look at America, with its two megacities (over 10M people): NYC and LA.",
+			text:"<b>Take a tour.</b> Let's look at a wide-shot of the US</b>",
+			location:{
+
+			},
+			button:"Fly to US"
+		},
+		{
+			text:"shot of US",
 			location:{
 				center:[-92.541666,29.895985],
 				zoom:4,
@@ -44,11 +51,12 @@ function setupMap(startCoords) {
 				easing: function (t) {
 					return t;
 				}
+
 			},
-			button:"Fly to wide-shot of US"
+			button:""
 		},
 		{
-			text:"We know China has a big population, but seeing the scale of megacities helps",
+			text:"shot of asia",
 			location:{
 				center:[120.887528,29.174370],
 				zoom:4,
@@ -58,14 +66,15 @@ function setupMap(startCoords) {
 				easing: function (t) {
 					return t;
 				}
+
 			},
-			button:"fly to china"
+			button:""
 		},
 		{
-			text:"We know China has a big population, but seeing the scale of megacities helps",
+			text:"shot of hk",
 			location:{
 				center:[113.892168,22.922493],
-				zoom:7.82,
+				zoom:8.01,
 				bearing:24.00,
 				pitch:58,
 				speed:.8,
@@ -73,22 +82,27 @@ function setupMap(startCoords) {
 					return t;
 				}
 			},
-			button:"fly to china"
+			button:""
 		},
 		{
-			text:"africa has",
+			text:"shot of africa",
 			location:{
-				center:[113.892168,22.922493],
-				zoom:7.82,
-				bearing:24.00,
-				pitch:58,
-				speed:.8,
+				center:[27.90,-1.89],
+				zoom:3.97,
+				bearing:-27.20,
+				pitch:60,
+				speed:.2,
 				easing: function (t) {
 					return t;
 				}
 			},
-			button:"fly to china"
+			button:""
 		}
+
+
+
+
+
 	]
 
 	var tourContainer = d3.select(".tour-container");
@@ -180,9 +194,22 @@ function setupMap(startCoords) {
 		}
 	}
 	function setupTourMode(){
-		tourContainer.select(".tour-text").text(tourObject[tourStop].text);
+
+		tourContainer.selectAll(".tour-toggle-arrow").on("click",function(d,i){
+			if(i==0){
+				flyToTour(tourObject[tourStop],"backward");
+			}
+			else{
+				flyToTour(tourObject[tourStop],"foward");
+			}
+
+		});
+
+
+		tourContainer.select(".tour-toggle-text-amount").text("of "+tourObject.length);
+		tourContainer.select(".tour-text").html(tourObject[tourStop].text);
 		tourContainer.select(".tour-button").text(tourObject[tourStop].button).on("click",function(d){
-			flyToTour(tourObject[tourStop]);
+			flyToTour(tourObject[tourStop],"forward");
 		});
 		tourContainer.select(".tour-hide").on("click",function(d){
 			if(!tourHidden){
@@ -196,13 +223,24 @@ function setupMap(startCoords) {
 		})
 	}
 
-	function flyToTour(location){
+	function flyToTour(location,direction){
 
-			map.flyTo(location.location)
-			tourStop = tourStop + 1;
-			tourContainer.select(".tour-text").text(tourObject[tourStop].text);
-			tourContainer.select(".tour-button").text(tourObject[tourStop].button);
-
+			if(direction=="backward"){
+				console.log("moving backward");
+				tourStop = tourStop - 1;
+				tourContainer.select(".tour-text").html(tourObject[tourStop].text);
+				tourContainer.select(".tour-button").text(tourObject[tourStop].button);
+				tourContainer.select(".tour-toggle-text-current").text(tourStop+1);
+				map.flyTo(tourObject[tourStop].location)
+			}
+			else {
+				console.log("moving forward");
+				tourStop = tourStop + 1;
+				tourContainer.select(".tour-text").html(tourObject[tourStop].text);
+				tourContainer.select(".tour-button").text(tourObject[tourStop].button);
+				tourContainer.select(".tour-toggle-text-current").text(tourStop+1);
+				map.flyTo(tourObject[tourStop].location)
+			}
 			// 		map.flyTo({
 			// 	bearing: 15.20,
 			// 	speed: 0.1, // make the flying slow
@@ -324,15 +362,11 @@ function setupMap(startCoords) {
 					startScreen.remove();
 				});
 			});
-			// map.setLayoutProperty("all-5k", 'visibility', 'none');
-			// map.setLayoutProperty("all-1k", 'visibility', 'none');
-			// map.setLayoutProperty("2015-gte-20-limited", 'visibility', 'visible');
-			// getPopulation();
 		});
 		// get population function
 		map.on('moveend', () => {
-			// console.log("here");
-			// getPopulation();
+			console.log("moved");
+			getPopulation();
 		});
 	}
 	createToggles();
