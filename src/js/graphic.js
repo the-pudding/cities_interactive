@@ -31,12 +31,10 @@ function getStartingCoordinates() {
 	});
 }
 
+
 function setupMap(startCoords) {
 	console.timeEnd('locate');
 	console.log(startCoords);
-}
-
-function init() {
 
 	var tourStop = 0;
 	var tourObject = [
