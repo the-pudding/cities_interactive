@@ -1,0 +1,2567 @@
+[
+  {
+    "name": "Japan",
+    "lon": 139.6917,
+    "lat": 35.6895
+  },
+  {
+    "name": "India",
+    "lon": 77.2167,
+    "lat": 28.6667
+  },
+  {
+    "name": "China",
+    "lon": 121.4581,
+    "lat": 31.2222
+  },
+  {
+    "name": "Mexico",
+    "lon": -99.1419,
+    "lat": 19.4273
+  },
+  {
+    "name": "Brazil",
+    "lon": -46.6361,
+    "lat": -23.5475
+  },
+  {
+    "name": "India",
+    "lon": 72.8808,
+    "lat": 19.074
+  },
+  {
+    "name": "Japan",
+    "lon": 135.5538,
+    "lat": 34.6758
+  },
+  {
+    "name": "Egypt",
+    "lon": 31.2394,
+    "lat": 30.0392
+  },
+  {
+    "name": "United States of America",
+    "lon": -74.0037,
+    "lat": 40.717
+  },
+  {
+    "name": "China",
+    "lon": 116.3972,
+    "lat": 39.9075
+  },
+  {
+    "name": "Bangladesh",
+    "lon": 90.4074,
+    "lat": 23.7104
+  },
+  {
+    "name": "Argentina",
+    "lon": -58.4004,
+    "lat": -34.6051
+  },
+  {
+    "name": "India",
+    "lon": 88.356,
+    "lat": 22.5335
+  },
+  {
+    "name": "Pakistan",
+    "lon": 67.0822,
+    "lat": 24.9056
+  },
+  {
+    "name": "Turkey",
+    "lon": 28.9497,
+    "lat": 41.0138
+  },
+  {
+    "name": "China",
+    "lon": 106.5528,
+    "lat": 29.5628
+  },
+  {
+    "name": "Brazil",
+    "lon": -43.2075,
+    "lat": -22.9028
+  },
+  {
+    "name": "Philippines",
+    "lon": 120.9822,
+    "lat": 14.6042
+  },
+  {
+    "name": "China",
+    "lon": 117.1886,
+    "lat": 39.1088
+  },
+  {
+    "name": "United States of America",
+    "lon": -118.2417,
+    "lat": 34.0317
+  },
+  {
+    "name": "Nigeria",
+    "lon": 3.3958,
+    "lat": 6.4531
+  },
+  {
+    "name": "Russian Federation",
+    "lon": 37.6218,
+    "lat": 55.755
+  },
+  {
+    "name": "China",
+    "lon": 113.2574,
+    "lat": 23.1255
+  },
+  {
+    "name": "Democratic Republic of the Congo",
+    "lon": 15.3136,
+    "lat": -4.3276
+  },
+  {
+    "name": "China",
+    "lon": 114.0634,
+    "lat": 22.5415
+  },
+  {
+    "name": "France",
+    "lon": 2.3488,
+    "lat": 48.8534
+  },
+  {
+    "name": "Pakistan",
+    "lon": 74.3436,
+    "lat": 31.5497
+  },
+  {
+    "name": "Indonesia",
+    "lon": 106.8416,
+    "lat": -6.2118
+  },
+  {
+    "name": "India",
+    "lon": 77.5937,
+    "lat": 12.9719
+  },
+  {
+    "name": "Republic of Korea",
+    "lon": 126.9778,
+    "lat": 37.5683
+  },
+  {
+    "name": "Peru",
+    "lon": -77.0282,
+    "lat": -12.0432
+  },
+  {
+    "name": "Colombia",
+    "lon": -74.0818,
+    "lat": 4.6097
+  },
+  {
+    "name": "India",
+    "lon": 80.2488,
+    "lat": 13.0531
+  },
+  {
+    "name": "Thailand",
+    "lon": 100.5252,
+    "lat": 13.722
+  },
+  {
+    "name": "Japan",
+    "lon": 136.9064,
+    "lat": 35.1815
+  },
+  {
+    "name": "United States of America",
+    "lon": -87.6501,
+    "lat": 41.85
+  },
+  {
+    "name": "India",
+    "lon": 78.4744,
+    "lat": 17.3753
+  },
+  {
+    "name": "United Kingdom",
+    "lon": -0.1257,
+    "lat": 51.5085
+  },
+  {
+    "name": "Iran (Islamic Republic of)",
+    "lon": 51.4215,
+    "lat": 35.6944
+  },
+  {
+    "name": "China",
+    "lon": 104.0667,
+    "lat": 30.6667
+  },
+  {
+    "name": "China",
+    "lon": 114.2667,
+    "lat": 30.5833
+  },
+  {
+    "name": "China",
+    "lon": 118.7898,
+    "lat": 32.0482
+  },
+  {
+    "name": "Viet Nam",
+    "lon": 106.6667,
+    "lat": 10.75
+  },
+  {
+    "name": "China",
+    "lon": 113.7414,
+    "lat": 23.0212
+  },
+  {
+    "name": "China, Hong Kong SAR",
+    "lon": 114.1887,
+    "lat": 22.2796
+  },
+  {
+    "name": "India",
+    "lon": 72.6167,
+    "lat": 23.0333
+  },
+  {
+    "name": "China",
+    "lon": 113.12,
+    "lat": 23.0228
+  },
+  {
+    "name": "Angola",
+    "lon": 13.2343,
+    "lat": -8.8368
+  },
+  {
+    "name": "Malaysia",
+    "lon": 101.6865,
+    "lat": 3.1412
+  },
+  {
+    "name": "China",
+    "lon": 120.1614,
+    "lat": 30.2937
+  },
+  {
+    "name": "China",
+    "lon": 108.9402,
+    "lat": 34.2894
+  },
+  {
+    "name": "Chile",
+    "lon": -70.6483,
+    "lat": -33.4569
+  },
+  {
+    "name": "China",
+    "lon": 123.4328,
+    "lat": 41.7922
+  },
+  {
+    "name": "Iraq",
+    "lon": 44.4009,
+    "lat": 33.3406
+  },
+  {
+    "name": "Spain",
+    "lon": -3.7026,
+    "lat": 40.4165
+  },
+  {
+    "name": "Saudi Arabia",
+    "lon": 46.7096,
+    "lat": 24.6905
+  },
+  {
+    "name": "Canada",
+    "lon": -79.4163,
+    "lat": 43.7001
+  },
+  {
+    "name": "United States of America",
+    "lon": -80.204,
+    "lat": 25.7891
+  },
+  {
+    "name": "Brazil",
+    "lon": -43.9378,
+    "lat": -19.9208
+  },
+  {
+    "name": "India",
+    "lon": 73.8616,
+    "lat": 18.5161
+  },
+  {
+    "name": "China",
+    "lon": 126.6467,
+    "lat": 45.7563
+  },
+  {
+    "name": "United States of America",
+    "lon": -97.3209,
+    "lat": 32.7254
+  },
+  {
+    "name": "India",
+    "lon": 72.8333,
+    "lat": 21.1667
+  },
+  {
+    "name": "United States of America",
+    "lon": -95.3694,
+    "lat": 29.7602
+  },
+  {
+    "name": "United States of America",
+    "lon": -75.1638,
+    "lat": 39.9523
+  },
+  {
+    "name": "Japan",
+    "lon": 130.4181,
+    "lat": 33.6064
+  },
+  {
+    "name": "Singapore",
+    "lon": 103.8501,
+    "lat": 1.2897
+  },
+  {
+    "name": "China",
+    "lon": 120.5853,
+    "lat": 31.3021
+  },
+  {
+    "name": "Spain",
+    "lon": 2.159,
+    "lat": 41.3888
+  },
+  {
+    "name": "Russian Federation",
+    "lon": 30.3262,
+    "lat": 59.9299
+  },
+  {
+    "name": "United States of America",
+    "lon": -84.4,
+    "lat": 33.76
+  },
+  {
+    "name": "Sudan",
+    "lon": 32.5324,
+    "lat": 15.5518
+  },
+  {
+    "name": "United Republic of Tanzania",
+    "lon": 39.2695,
+    "lat": -6.8235
+  },
+  {
+    "name": "China",
+    "lon": 120.3719,
+    "lat": 36.0986
+  },
+  {
+    "name": "South Africa",
+    "lon": 28.0436,
+    "lat": -26.2023
+  },
+  {
+    "name": "United States of America",
+    "lon": -77.0364,
+    "lat": 38.8951
+  },
+  {
+    "name": "Myanmar",
+    "lon": 96.1561,
+    "lat": 16.8053
+  },
+  {
+    "name": "China",
+    "lon": 121.6023,
+    "lat": 38.9138
+  },
+  {
+    "name": "Mexico",
+    "lon": -103.3333,
+    "lat": 20.6667
+  },
+  {
+    "name": "Egypt",
+    "lon": 29.9046,
+    "lat": 31.1925
+  },
+  {
+    "name": "Turkey",
+    "lon": 32.8543,
+    "lat": 39.9199
+  },
+  {
+    "name": "China",
+    "lon": 116.9971,
+    "lat": 36.6767
+  },
+  {
+    "name": "Australia",
+    "lon": 151.2073,
+    "lat": -33.8679
+  },
+  {
+    "name": "Bangladesh",
+    "lon": 91.8364,
+    "lat": 22.3331
+  },
+  {
+    "name": "Côte d'Ivoire",
+    "lon": -4.0268,
+    "lat": 5.3453
+  },
+  {
+    "name": "Mexico",
+    "lon": -100.3167,
+    "lat": 25.6667
+  },
+  {
+    "name": "Australia",
+    "lon": 144.9633,
+    "lat": -37.814
+  },
+  {
+    "name": "China",
+    "lon": 113.6486,
+    "lat": 34.7578
+  },
+  {
+    "name": "United States of America",
+    "lon": -71.0645,
+    "lat": 42.3479
+  },
+  {
+    "name": "China, Taiwan Province of China",
+    "lon": 121.4621,
+    "lat": 25.0121
+  },
+  {
+    "name": "Brazil",
+    "lon": -47.9297,
+    "lat": -15.7797
+  },
+  {
+    "name": "Italy",
+    "lon": 12.4811,
+    "lat": 41.8947
+  },
+  {
+    "name": "South Africa",
+    "lon": 18.4232,
+    "lat": -33.9258
+  },
+  {
+    "name": "United States of America",
+    "lon": -112.0747,
+    "lat": 33.4495
+  },
+  {
+    "name": "Canada",
+    "lon": -73.5878,
+    "lat": 45.5088
+  },
+  {
+    "name": "Saudi Arabia",
+    "lon": 39.2192,
+    "lat": 21.5169
+  },
+  {
+    "name": "China",
+    "lon": 112.9383,
+    "lat": 28.2274
+  },
+  {
+    "name": "Brazil",
+    "lon": -51.23,
+    "lat": -30.0331
+  },
+  {
+    "name": "China",
+    "lon": 125.294,
+    "lat": 43.8825
+  },
+  {
+    "name": "China",
+    "lon": 116.7148,
+    "lat": 23.3681
+  },
+  {
+    "name": "China",
+    "lon": 102.7183,
+    "lat": 25.0389
+  },
+  {
+    "name": "Kenya",
+    "lon": 36.8167,
+    "lat": -1.2833
+  },
+  {
+    "name": "Ethiopia",
+    "lon": 38.7469,
+    "lat": 9.025
+  },
+  {
+    "name": "Brazil",
+    "lon": -34.8811,
+    "lat": -8.0539
+  },
+  {
+    "name": "Brazil",
+    "lon": -38.5436,
+    "lat": -3.7412
+  },
+  {
+    "name": "Colombia",
+    "lon": -75.5636,
+    "lat": 6.2518
+  },
+  {
+    "name": "Afghanistan",
+    "lon": 69.1725,
+    "lat": 34.5289
+  },
+  {
+    "name": "China",
+    "lon": 114.5108,
+    "lat": 38.0418
+  },
+  {
+    "name": "Israel",
+    "lon": 34.7806,
+    "lat": 32.0809
+  },
+  {
+    "name": "Viet Nam",
+    "lon": 105.8412,
+    "lat": 21.0245
+  },
+  {
+    "name": "United States of America",
+    "lon": -83.1026,
+    "lat": 42.3871
+  },
+  {
+    "name": "China",
+    "lon": 117.2808,
+    "lat": 31.8639
+  },
+  {
+    "name": "Brazil",
+    "lon": -38.5108,
+    "lat": -12.9711
+  },
+  {
+    "name": "Morocco",
+    "lon": -7.6192,
+    "lat": 33.5928
+  },
+  {
+    "name": "Nigeria",
+    "lon": 8.5167,
+    "lat": 12.0001
+  },
+  {
+    "name": "Germany",
+    "lon": 13.4105,
+    "lat": 52.5244
+  },
+  {
+    "name": "China",
+    "lon": 87.6038,
+    "lat": 43.8253
+  },
+  {
+    "name": "China",
+    "lon": 112.5516,
+    "lat": 37.8619
+  },
+  {
+    "name": "South Africa",
+    "lon": 28.33,
+    "lat": -26.25
+  },
+  {
+    "name": "Republic of Korea",
+    "lon": 129.0403,
+    "lat": 35.1028
+  },
+  {
+    "name": "India",
+    "lon": 75.8167,
+    "lat": 26.9167
+  },
+  {
+    "name": "Brazil",
+    "lon": -49.2731,
+    "lat": -25.4278
+  },
+  {
+    "name": "China",
+    "lon": 118.0819,
+    "lat": 24.4798
+  },
+  {
+    "name": "China",
+    "lon": 121.5495,
+    "lat": 29.8782
+  },
+  {
+    "name": "China",
+    "lon": 119.2989,
+    "lat": 26.0754
+  },
+  {
+    "name": "United States of America",
+    "lon": -122.4374,
+    "lat": 37.7599
+  },
+  {
+    "name": "China",
+    "lon": 108.3167,
+    "lat": 22.8167
+  },
+  {
+    "name": "United States of America",
+    "lon": -122.3331,
+    "lat": 47.6264
+  },
+  {
+    "name": "India",
+    "lon": 80.9167,
+    "lat": 26.85
+  },
+  {
+    "name": "Greece",
+    "lon": 23.749,
+    "lat": 37.9534
+  },
+  {
+    "name": "Nigeria",
+    "lon": 3.8964,
+    "lat": 7.3878
+  },
+  {
+    "name": "China",
+    "lon": 120.6668,
+    "lat": 27.9994
+  },
+  {
+    "name": "United States of America",
+    "lon": -117.1573,
+    "lat": 32.7153
+  },
+  {
+    "name": "Italy",
+    "lon": 9.1834,
+    "lat": 45.5531
+  },
+  {
+    "name": "Cameroon",
+    "lon": 11.5167,
+    "lat": 3.8667
+  },
+  {
+    "name": "Pakistan",
+    "lon": 73.0833,
+    "lat": 31.4167
+  },
+  {
+    "name": "South Africa",
+    "lon": 31.0292,
+    "lat": -29.8579
+  },
+  {
+    "name": "China",
+    "lon": 115.8833,
+    "lat": 28.6833
+  },
+  {
+    "name": "Brazil",
+    "lon": -47.0656,
+    "lat": -22.9109
+  },
+  {
+    "name": "China",
+    "lon": 119.9589,
+    "lat": 31.7943
+  },
+  {
+    "name": "India",
+    "lon": 80.35,
+    "lat": 26.4667
+  },
+  {
+    "name": "China",
+    "lon": 120.2986,
+    "lat": 31.5367
+  },
+  {
+    "name": "Cameroon",
+    "lon": 9.7043,
+    "lat": 4.0483
+  },
+  {
+    "name": "Dem. People's Republic of Korea",
+    "lon": 125.7543,
+    "lat": 39.0339
+  },
+  {
+    "name": "Paraguay",
+    "lon": -57.6359,
+    "lat": -25.3007
+  },
+  {
+    "name": "Mexico",
+    "lon": -98.205,
+    "lat": 19.0415
+  },
+  {
+    "name": "Dominican Republic",
+    "lon": -69.9018,
+    "lat": 18.4896
+  },
+  {
+    "name": "Iran (Islamic Republic of)",
+    "lon": 59.6062,
+    "lat": 36.297
+  },
+  {
+    "name": "Venezuela (Bolivarian Republic of)",
+    "lon": -66.8792,
+    "lat": 10.488
+  },
+  {
+    "name": "Ukraine",
+    "lon": 30.5186,
+    "lat": 50.4454
+  },
+  {
+    "name": "Portugal",
+    "lon": -9.1399,
+    "lat": 38.7169
+  },
+  {
+    "name": "China",
+    "lon": 106.7167,
+    "lat": 26.5833
+  },
+  {
+    "name": "Turkey",
+    "lon": 27.1384,
+    "lat": 38.4127
+  },
+  {
+    "name": "Indonesia",
+    "lon": 112.7411,
+    "lat": -7.2888
+  },
+  {
+    "name": "Japan",
+    "lon": 138.3831,
+    "lat": 34.9769
+  },
+  {
+    "name": "Indonesia",
+    "lon": 106.9756,
+    "lat": -6.2383
+  },
+  {
+    "name": "China",
+    "lon": 113.3839,
+    "lat": 22.518
+  },
+  {
+    "name": "United States of America",
+    "lon": -93.2699,
+    "lat": 44.9731
+  },
+  {
+    "name": "Senegal",
+    "lon": -17.4441,
+    "lat": 14.6937
+  },
+  {
+    "name": "China",
+    "lon": 118.1799,
+    "lat": 39.6285
+  },
+  {
+    "name": "Guatemala",
+    "lon": -90.5307,
+    "lat": 14.6127
+  },
+  {
+    "name": "Ecuador",
+    "lon": -79.9,
+    "lat": -2.1667
+  },
+  {
+    "name": "China",
+    "lon": 103.7922,
+    "lat": 36.0564
+  },
+  {
+    "name": "China, Taiwan Province of China",
+    "lon": 121.5457,
+    "lat": 25.047
+  },
+  {
+    "name": "Republic of Korea",
+    "lon": 126.7317,
+    "lat": 37.4536
+  },
+  {
+    "name": "India",
+    "lon": 79.1,
+    "lat": 21.15
+  },
+  {
+    "name": "United States of America",
+    "lon": -82.4584,
+    "lat": 27.9475
+  },
+  {
+    "name": "India",
+    "lon": 75.7787,
+    "lat": 11.2567
+  },
+  {
+    "name": "Japan",
+    "lon": 141.3469,
+    "lat": 43.0642
+  },
+  {
+    "name": "United Kingdom",
+    "lon": -2.2374,
+    "lat": 53.481
+  },
+  {
+    "name": "Madagascar",
+    "lon": 47.5361,
+    "lat": -18.9137
+  },
+  {
+    "name": "Ghana",
+    "lon": -1.6244,
+    "lat": 6.6885
+  },
+  {
+    "name": "United States of America",
+    "lon": -104.9831,
+    "lat": 39.7343
+  },
+  {
+    "name": "Algeria",
+    "lon": 3.042,
+    "lat": 36.7525
+  },
+  {
+    "name": "Uganda",
+    "lon": 32.5822,
+    "lat": 0.3163
+  },
+  {
+    "name": "Colombia",
+    "lon": -76.5225,
+    "lat": 3.4372
+  },
+  {
+    "name": "Kuwait",
+    "lon": 47.9783,
+    "lat": 29.3697
+  },
+  {
+    "name": "India",
+    "lon": 75.8333,
+    "lat": 22.7179
+  },
+  {
+    "name": "India",
+    "lon": 76.2601,
+    "lat": 9.9307
+  },
+  {
+    "name": "United Kingdom",
+    "lon": -1.8998,
+    "lat": 52.4814
+  },
+  {
+    "name": "Yemen",
+    "lon": 44.2078,
+    "lat": 15.3531
+  },
+  {
+    "name": "Indonesia",
+    "lon": 107.6085,
+    "lat": -6.9194
+  },
+  {
+    "name": "Puerto Rico",
+    "lon": -66.1057,
+    "lat": 18.4663
+  },
+  {
+    "name": "Nigeria",
+    "lon": 7.4898,
+    "lat": 9.0574
+  },
+  {
+    "name": "Haiti",
+    "lon": -72.335,
+    "lat": 18.5392
+  },
+  {
+    "name": "Canada",
+    "lon": -123.1193,
+    "lat": 49.2497
+  },
+  {
+    "name": "China",
+    "lon": 118.0633,
+    "lat": 36.7906
+  },
+  {
+    "name": "India",
+    "lon": 76.9614,
+    "lat": 10.9925
+  },
+  {
+    "name": "United Arab Emirates",
+    "lon": 55.3113,
+    "lat": 25.2721
+  },
+  {
+    "name": "Uzbekistan",
+    "lon": 69.2163,
+    "lat": 41.2647
+  },
+  {
+    "name": "Brazil",
+    "lon": -49.2539,
+    "lat": -16.6786
+  },
+  {
+    "name": "India",
+    "lon": 76.2167,
+    "lat": 10.5167
+  },
+  {
+    "name": "India",
+    "lon": 76.0667,
+    "lat": 11.0667
+  },
+  {
+    "name": "Nigeria",
+    "lon": 7.0134,
+    "lat": 4.7774
+  },
+  {
+    "name": "Ghana",
+    "lon": -0.1969,
+    "lat": 5.556
+  },
+  {
+    "name": "United States of America",
+    "lon": -115.1398,
+    "lat": 36.1699
+  },
+  {
+    "name": "United States of America",
+    "lon": -76.6122,
+    "lat": 39.2904
+  },
+  {
+    "name": "Japan",
+    "lon": 140.8976,
+    "lat": 38.256
+  },
+  {
+    "name": "China",
+    "lon": 114.4678,
+    "lat": 36.6006
+  },
+  {
+    "name": "Republic of Korea",
+    "lon": 128.5911,
+    "lat": 35.8703
+  },
+  {
+    "name": "Lebanon",
+    "lon": 35.4833,
+    "lat": 33.9
+  },
+  {
+    "name": "India",
+    "lon": 85.1167,
+    "lat": 25.6
+  },
+  {
+    "name": "Syrian Arab Republic",
+    "lon": 36.3084,
+    "lat": 33.5086
+  },
+  {
+    "name": "Mali",
+    "lon": -8,
+    "lat": 12.65
+  },
+  {
+    "name": "Indonesia",
+    "lon": 98.6667,
+    "lat": 3.5833
+  },
+  {
+    "name": "Australia",
+    "lon": 153.0281,
+    "lat": -27.4679
+  },
+  {
+    "name": "Azerbaijan",
+    "lon": 49.892,
+    "lat": 40.3777
+  },
+  {
+    "name": "Italy",
+    "lon": 14.2592,
+    "lat": 40.8502
+  },
+  {
+    "name": "United States of America",
+    "lon": -117.3962,
+    "lat": 33.9534
+  },
+  {
+    "name": "China",
+    "lon": 119.1019,
+    "lat": 36.71
+  },
+  {
+    "name": "Burkina Faso",
+    "lon": -1.5383,
+    "lat": 12.3642
+  },
+  {
+    "name": "United States of America",
+    "lon": -90.1972,
+    "lat": 38.6286
+  },
+  {
+    "name": "Indonesia",
+    "lon": 106.7942,
+    "lat": -6.4025
+  },
+  {
+    "name": "Mexico",
+    "lon": -99.6573,
+    "lat": 19.2839
+  },
+  {
+    "name": "Zambia",
+    "lon": 28.2771,
+    "lat": -15.4134
+  },
+  {
+    "name": "Tunisia",
+    "lon": 10.1658,
+    "lat": 36.819
+  },
+  {
+    "name": "Brazil",
+    "lon": -48.479,
+    "lat": -1.4561
+  },
+  {
+    "name": "China",
+    "lon": 114.4,
+    "lat": 23.0833
+  },
+  {
+    "name": "Cuba",
+    "lon": -82.3785,
+    "lat": 23.1195
+  },
+  {
+    "name": "China",
+    "lon": 121.4372,
+    "lat": 37.4651
+  },
+  {
+    "name": "India",
+    "lon": 77.4,
+    "lat": 23.2667
+  },
+  {
+    "name": "China, Taiwan Province of China",
+    "lon": 121.2969,
+    "lat": 24.9936
+  },
+  {
+    "name": "Japan",
+    "lon": 132.4605,
+    "lat": 34.3928
+  },
+  {
+    "name": "China",
+    "lon": 119.0148,
+    "lat": 33.607
+  },
+  {
+    "name": "China",
+    "lon": 120.5715,
+    "lat": 30.011
+  },
+  {
+    "name": "South Africa",
+    "lon": 28.1878,
+    "lat": -25.7449
+  },
+  {
+    "name": "Colombia",
+    "lon": -74.7964,
+    "lat": 10.9639
+  },
+  {
+    "name": "India",
+    "lon": 76.9569,
+    "lat": 8.5069
+  },
+  {
+    "name": "Indonesia",
+    "lon": 106.6527,
+    "lat": -6.2024
+  },
+  {
+    "name": "Venezuela (Bolivarian Republic of)",
+    "lon": -71.6406,
+    "lat": 10.6317
+  },
+  {
+    "name": "United States of America",
+    "lon": -98.4935,
+    "lat": 29.4241
+  },
+  {
+    "name": "Pakistan",
+    "lon": 73.0667,
+    "lat": 33.6
+  },
+  {
+    "name": "China",
+    "lon": 112.4562,
+    "lat": 34.6186
+  },
+  {
+    "name": "Brazil",
+    "lon": -60.025,
+    "lat": -3.1019
+  },
+  {
+    "name": "Democratic Republic of the Congo",
+    "lon": 27.4794,
+    "lat": -11.6609
+  },
+  {
+    "name": "Democratic Republic of the Congo",
+    "lon": 23.6,
+    "lat": -6.15
+  },
+  {
+    "name": "United States of America",
+    "lon": -122.6799,
+    "lat": 45.5215
+  },
+  {
+    "name": "Belgium",
+    "lon": 4.3499,
+    "lat": 50.8467
+  },
+  {
+    "name": "India",
+    "lon": 73.2,
+    "lat": 22.3
+  },
+  {
+    "name": "China",
+    "lon": 109.8222,
+    "lat": 40.6522
+  },
+  {
+    "name": "India",
+    "lon": 78.0167,
+    "lat": 27.1833
+  },
+  {
+    "name": "Congo",
+    "lon": 15.2832,
+    "lat": -4.2658
+  },
+  {
+    "name": "Belarus",
+    "lon": 27.5667,
+    "lat": 53.9
+  },
+  {
+    "name": "Mexico",
+    "lon": -117.0167,
+    "lat": 32.5333
+  },
+  {
+    "name": "United States of America",
+    "lon": -121.4944,
+    "lat": 38.5816
+  },
+  {
+    "name": "India",
+    "lon": 83.2097,
+    "lat": 17.6819
+  },
+  {
+    "name": "Pakistan",
+    "lon": 74.1833,
+    "lat": 32.15
+  },
+  {
+    "name": "China",
+    "lon": 117.1866,
+    "lat": 34.2637
+  },
+  {
+    "name": "Iran (Islamic Republic of)",
+    "lon": 51.6776,
+    "lat": 32.6572
+  },
+  {
+    "name": "China",
+    "lon": 120.8655,
+    "lat": 31.9904
+  },
+  {
+    "name": "Australia",
+    "lon": 115.8525,
+    "lat": -31.9478
+  },
+  {
+    "name": "Brazil",
+    "lon": -40.3079,
+    "lat": -20.3054
+  },
+  {
+    "name": "India",
+    "lon": 75.3716,
+    "lat": 11.8729
+  },
+  {
+    "name": "China",
+    "lon": 109.3784,
+    "lat": 24.3017
+  },
+  {
+    "name": "Pakistan",
+    "lon": 71.5594,
+    "lat": 34.002
+  },
+  {
+    "name": "Romania",
+    "lon": 26.1043,
+    "lat": 44.4328
+  },
+  {
+    "name": "Austria",
+    "lon": 16.3707,
+    "lat": 48.2064
+  },
+  {
+    "name": "United Kingdom",
+    "lon": -1.7649,
+    "lat": 53.7984
+  },
+  {
+    "name": "Turkey",
+    "lon": 29.0611,
+    "lat": 40.1917
+  },
+  {
+    "name": "Pakistan",
+    "lon": 71.4833,
+    "lat": 30.1833
+  },
+  {
+    "name": "Saudi Arabia",
+    "lon": 39.8159,
+    "lat": 21.4174
+  },
+  {
+    "name": "Morocco",
+    "lon": -6.8326,
+    "lat": 34.0133
+  },
+  {
+    "name": "China",
+    "lon": 111.6522,
+    "lat": 40.8106
+  },
+  {
+    "name": "Germany",
+    "lon": 10,
+    "lat": 53.55
+  },
+  {
+    "name": "Jordan",
+    "lon": 35.945,
+    "lat": 31.9552
+  },
+  {
+    "name": "Somalia",
+    "lon": 45.3435,
+    "lat": 2.0416
+  },
+  {
+    "name": "India",
+    "lon": 73.8,
+    "lat": 19.9833
+  },
+  {
+    "name": "Brazil",
+    "lon": -46.3266,
+    "lat": -23.957
+  },
+  {
+    "name": "Cambodia",
+    "lon": 104.916,
+    "lat": 11.5625
+  },
+  {
+    "name": "United States of America",
+    "lon": -81.6874,
+    "lat": 41.4986
+  },
+  {
+    "name": "Venezuela (Bolivarian Republic of)",
+    "lon": -68.0077,
+    "lat": 10.162
+  },
+  {
+    "name": "China",
+    "lon": 119.4238,
+    "lat": 32.3915
+  },
+  {
+    "name": "Italy",
+    "lon": 7.6772,
+    "lat": 45.0687
+  },
+  {
+    "name": "China",
+    "lon": 115.4903,
+    "lat": 38.8511
+  },
+  {
+    "name": "Hungary",
+    "lon": 19.0399,
+    "lat": 47.498
+  },
+  {
+    "name": "Bolivia (Plurinational State of)",
+    "lon": -68.15,
+    "lat": -16.5
+  },
+  {
+    "name": "Poland",
+    "lon": 21.0118,
+    "lat": 52.2298
+  },
+  {
+    "name": "United States of America",
+    "lon": -81.3792,
+    "lat": 28.5383
+  },
+  {
+    "name": "United States of America",
+    "lon": -121.895,
+    "lat": 37.3394
+  },
+  {
+    "name": "Ecuador",
+    "lon": -78.525,
+    "lat": -0.2299
+  },
+  {
+    "name": "India",
+    "lon": 75.85,
+    "lat": 30.9
+  },
+  {
+    "name": "United States of America",
+    "lon": -79.9882,
+    "lat": 40.4418
+  },
+  {
+    "name": "India",
+    "lon": 80.6167,
+    "lat": 16.5167
+  },
+  {
+    "name": "Mexico",
+    "lon": -101.6805,
+    "lat": 21.1234
+  },
+  {
+    "name": "Guinea",
+    "lon": -13.6476,
+    "lat": 9.5716
+  },
+  {
+    "name": "China",
+    "lon": 118.3334,
+    "lat": 35.0541
+  },
+  {
+    "name": "Uruguay",
+    "lon": -56.1674,
+    "lat": -34.8335
+  },
+  {
+    "name": "Indonesia",
+    "lon": 110.4203,
+    "lat": -6.9932
+  },
+  {
+    "name": "United States of America",
+    "lon": -84.5188,
+    "lat": 39.1047
+  },
+  {
+    "name": "United States of America",
+    "lon": -97.74,
+    "lat": 30.27
+  },
+  {
+    "name": "China",
+    "lon": 110.3301,
+    "lat": 20.0274
+  },
+  {
+    "name": "Panama",
+    "lon": -79.5196,
+    "lat": 8.9958
+  },
+  {
+    "name": "Turkey",
+    "lon": 35.3289,
+    "lat": 37.0017
+  },
+  {
+    "name": "Pakistan",
+    "lon": 68.3667,
+    "lat": 25.3667
+  },
+  {
+    "name": "Kazakhstan",
+    "lon": 76.9101,
+    "lat": 43.2472
+  },
+  {
+    "name": "China",
+    "lon": 120.1551,
+    "lat": 33.3569
+  },
+  {
+    "name": "China",
+    "lon": 121.4185,
+    "lat": 28.6372
+  },
+  {
+    "name": "United States of America",
+    "lon": -86.1477,
+    "lat": 39.7909
+  },
+  {
+    "name": "France",
+    "lon": 4.8467,
+    "lat": 45.7485
+  },
+  {
+    "name": "United Kingdom",
+    "lon": -4.2576,
+    "lat": 55.8652
+  },
+  {
+    "name": "Togo",
+    "lon": 1.2123,
+    "lat": 6.1375
+  },
+  {
+    "name": "Philippines",
+    "lon": 125.6125,
+    "lat": 7.0739
+  },
+  {
+    "name": "China",
+    "lon": 125,
+    "lat": 46.5833
+  },
+  {
+    "name": "United States of America",
+    "lon": -80.8431,
+    "lat": 35.2271
+  },
+  {
+    "name": "United States of America",
+    "lon": -94.6275,
+    "lat": 39.1142
+  },
+  {
+    "name": "India",
+    "lon": 70.7833,
+    "lat": 22.3
+  },
+  {
+    "name": "Iran (Islamic Republic of)",
+    "lon": 51.0103,
+    "lat": 35.8355
+  },
+  {
+    "name": "France",
+    "lon": 5.4433,
+    "lat": 43.5284
+  },
+  {
+    "name": "India",
+    "lon": 78.1167,
+    "lat": 9.9333
+  },
+  {
+    "name": "Indonesia",
+    "lon": 104.7458,
+    "lat": -2.9167
+  },
+  {
+    "name": "China",
+    "lon": 113.0833,
+    "lat": 22.5833
+  },
+  {
+    "name": "Russian Federation",
+    "lon": 82.9346,
+    "lat": 55.0415
+  },
+  {
+    "name": "China",
+    "lon": 122.99,
+    "lat": 41.1236
+  },
+  {
+    "name": "China",
+    "lon": 113.5678,
+    "lat": 22.2769
+  },
+  {
+    "name": "India",
+    "lon": 77.7193,
+    "lat": 28.9716
+  },
+  {
+    "name": "Iran (Islamic Republic of)",
+    "lon": 46.2919,
+    "lat": 38.08
+  },
+  {
+    "name": "Iran (Islamic Republic of)",
+    "lon": 52.5388,
+    "lat": 29.6036
+  },
+  {
+    "name": "China",
+    "lon": 119.1758,
+    "lat": 34.5969
+  },
+  {
+    "name": "India",
+    "lon": 82.9822,
+    "lat": 25.3164
+  },
+  {
+    "name": "China",
+    "lon": 112.144,
+    "lat": 32.0088
+  },
+  {
+    "name": "Republic of Korea",
+    "lon": 127.4197,
+    "lat": 36.3214
+  },
+  {
+    "name": "China",
+    "lon": 113.293,
+    "lat": 40.0805
+  },
+  {
+    "name": "Bolivia (Plurinational State of)",
+    "lon": -63.1698,
+    "lat": -17.7989
+  },
+  {
+    "name": "Turkey",
+    "lon": 37.3825,
+    "lat": 37.0594
+  },
+  {
+    "name": "China, Taiwan Province of China",
+    "lon": 120.3155,
+    "lat": 22.626
+  },
+  {
+    "name": "China",
+    "lon": 126.5603,
+    "lat": 43.8508
+  },
+  {
+    "name": "Argentina",
+    "lon": -64.1811,
+    "lat": -31.4135
+  },
+  {
+    "name": "United States of America",
+    "lon": -83.0002,
+    "lat": 39.9622
+  },
+  {
+    "name": "Republic of Korea",
+    "lon": 126.9186,
+    "lat": 35.1461
+  },
+  {
+    "name": "Zimbabwe",
+    "lon": 31.0539,
+    "lat": -17.8294
+  },
+  {
+    "name": "Sweden",
+    "lon": 18.0649,
+    "lat": 59.3326
+  },
+  {
+    "name": "Nigeria",
+    "lon": 5.6275,
+    "lat": 6.335
+  },
+  {
+    "name": "New Zealand",
+    "lon": 174.7667,
+    "lat": -36.8667
+  },
+  {
+    "name": "United States of America",
+    "lon": -76.0872,
+    "lat": 36.8345
+  },
+  {
+    "name": "India",
+    "lon": 86.1833,
+    "lat": 22.8
+  },
+  {
+    "name": "China",
+    "lon": 123.9672,
+    "lat": 47.3408
+  },
+  {
+    "name": "Indonesia",
+    "lon": 119.4236,
+    "lat": -5.1444
+  },
+  {
+    "name": "China",
+    "lon": 119.0103,
+    "lat": 25.4394
+  },
+  {
+    "name": "Ukraine",
+    "lon": 36.2527,
+    "lat": 49.9808
+  },
+  {
+    "name": "Germany",
+    "lon": 11.5734,
+    "lat": 48.1371
+  },
+  {
+    "name": "China",
+    "lon": 118.3812,
+    "lat": 31.3336
+  },
+  {
+    "name": "Russian Federation",
+    "lon": 60.6125,
+    "lat": 56.8575
+  },
+  {
+    "name": "Mexico",
+    "lon": -106.4833,
+    "lat": 31.7333
+  },
+  {
+    "name": "Argentina",
+    "lon": -60.6393,
+    "lat": -32.9468
+  },
+  {
+    "name": "India",
+    "lon": 76.5917,
+    "lat": 8.8806
+  },
+  {
+    "name": "United States of America",
+    "lon": -87.9065,
+    "lat": 43.0389
+  },
+  {
+    "name": "Brazil",
+    "lon": -44.2832,
+    "lat": -2.5385
+  },
+  {
+    "name": "India",
+    "lon": 74.7974,
+    "lat": 34.0837
+  },
+  {
+    "name": "China",
+    "lon": 118.5997,
+    "lat": 24.8968
+  },
+  {
+    "name": "China",
+    "lon": 116.5847,
+    "lat": 35.4146
+  },
+  {
+    "name": "Iraq",
+    "lon": 43.1189,
+    "lat": 36.335
+  },
+  {
+    "name": "Serbia",
+    "lon": 20.4633,
+    "lat": 44.8176
+  },
+  {
+    "name": "Mongolia",
+    "lon": 106.8832,
+    "lat": 47.9077
+  },
+  {
+    "name": "Canada",
+    "lon": -114.0593,
+    "lat": 51.0441
+  },
+  {
+    "name": "India",
+    "lon": 75.3433,
+    "lat": 19.8766
+  },
+  {
+    "name": "India",
+    "lon": 79.9501,
+    "lat": 23.167
+  },
+  {
+    "name": "China",
+    "lon": 106.2731,
+    "lat": 38.4681
+  },
+  {
+    "name": "Mozambique",
+    "lon": 32.4589,
+    "lat": -25.9622
+  },
+  {
+    "name": "India",
+    "lon": 81.6333,
+    "lat": 21.2333
+  },
+  {
+    "name": "China",
+    "lon": 116.6379,
+    "lat": 23.6651
+  },
+  {
+    "name": "China",
+    "lon": 116.9969,
+    "lat": 32.6264
+  },
+  {
+    "name": "India",
+    "lon": 86.9833,
+    "lat": 23.6833
+  },
+  {
+    "name": "Switzerland",
+    "lon": 8.503,
+    "lat": 47.3579
+  },
+  {
+    "name": "China",
+    "lon": 101.7667,
+    "lat": 36.6167
+  },
+  {
+    "name": "Mexico",
+    "lon": -103.4333,
+    "lat": 25.55
+  },
+  {
+    "name": "Canada",
+    "lon": -75.698,
+    "lat": 45.4166
+  },
+  {
+    "name": "China",
+    "lon": 123.9467,
+    "lat": 41.8807
+  },
+  {
+    "name": "China",
+    "lon": 112.6251,
+    "lat": 26.8841
+  },
+  {
+    "name": "Portugal",
+    "lon": -8.611,
+    "lat": 41.1496
+  },
+  {
+    "name": "China",
+    "lon": 121.2524,
+    "lat": 30.1761
+  },
+  {
+    "name": "Saudi Arabia",
+    "lon": 39.6111,
+    "lat": 24.4635
+  },
+  {
+    "name": "Costa Rica",
+    "lon": -84.0807,
+    "lat": 9.9278
+  },
+  {
+    "name": "India",
+    "lon": 81.85,
+    "lat": 25.45
+  },
+  {
+    "name": "Canada",
+    "lon": -113.5037,
+    "lat": 53.5434
+  },
+  {
+    "name": "Brazil",
+    "lon": -35.2094,
+    "lat": -5.795
+  },
+  {
+    "name": "Brazil",
+    "lon": -34.8631,
+    "lat": -7.115
+  },
+  {
+    "name": "China",
+    "lon": 119.5883,
+    "lat": 39.9317
+  },
+  {
+    "name": "India",
+    "lon": 73.0158,
+    "lat": 26.2392
+  },
+  {
+    "name": "Australia",
+    "lon": 138.5986,
+    "lat": -34.9287
+  },
+  {
+    "name": "Thailand",
+    "lon": 100.9883,
+    "lat": 13.3611
+  },
+  {
+    "name": "United Arab Emirates",
+    "lon": 55.4033,
+    "lat": 25.3573
+  },
+  {
+    "name": "India",
+    "lon": 74.8755,
+    "lat": 31.631
+  },
+  {
+    "name": "Denmark",
+    "lon": 12.5655,
+    "lat": 55.6759
+  },
+  {
+    "name": "China",
+    "lon": 114.8794,
+    "lat": 40.81
+  },
+  {
+    "name": "Liberia",
+    "lon": -10.7969,
+    "lat": 6.3005
+  },
+  {
+    "name": "Czechia",
+    "lon": 14.4208,
+    "lat": 50.088
+  },
+  {
+    "name": "China",
+    "lon": 111.2847,
+    "lat": 30.7144
+  },
+  {
+    "name": "Myanmar",
+    "lon": 96.0836,
+    "lat": 21.9747
+  },
+  {
+    "name": "India",
+    "lon": 85.3333,
+    "lat": 23.35
+  },
+  {
+    "name": "Russian Federation",
+    "lon": 44.0021,
+    "lat": 56.3287
+  },
+  {
+    "name": "India",
+    "lon": 86.45,
+    "lat": 23.8
+  },
+  {
+    "name": "Bulgaria",
+    "lon": 23.3242,
+    "lat": 42.6975
+  },
+  {
+    "name": "Syrian Arab Republic",
+    "lon": 36.7181,
+    "lat": 34.7318
+  },
+  {
+    "name": "Brazil",
+    "lon": -35.7353,
+    "lat": -9.6658
+  },
+  {
+    "name": "Honduras",
+    "lon": -87.2068,
+    "lat": 14.0818
+  },
+  {
+    "name": "China, Taiwan Province of China",
+    "lon": 120.6727,
+    "lat": 24.1416
+  },
+  {
+    "name": "Iraq",
+    "lon": 47.8149,
+    "lat": 30.4972
+  },
+  {
+    "name": "India",
+    "lon": 78.1792,
+    "lat": 26.2236
+  },
+  {
+    "name": "China",
+    "lon": 117.1191,
+    "lat": 36.1904
+  },
+  {
+    "name": "Finland",
+    "lon": 24.9402,
+    "lat": 60.1692
+  },
+  {
+    "name": "Mexico",
+    "lon": -100.3833,
+    "lat": 20.6
+  },
+  {
+    "name": "Russian Federation",
+    "lon": 49.1221,
+    "lat": 55.7887
+  },
+  {
+    "name": "Brazil",
+    "lon": -48.8456,
+    "lat": -26.3044
+  },
+  {
+    "name": "Colombia",
+    "lon": -73.1198,
+    "lat": 7.1254
+  },
+  {
+    "name": "United Arab Emirates",
+    "lon": 54.3618,
+    "lat": 24.4648
+  },
+  {
+    "name": "United States of America",
+    "lon": -71.4177,
+    "lat": 41.824
+  },
+  {
+    "name": "Indonesia",
+    "lon": 104.0313,
+    "lat": 1.1191
+  },
+  {
+    "name": "Thailand",
+    "lon": 100.5968,
+    "lat": 13.5993
+  },
+  {
+    "name": "Turkey",
+    "lon": 32.4846,
+    "lat": 37.8714
+  },
+  {
+    "name": "China",
+    "lon": 119.9029,
+    "lat": 32.4945
+  },
+  {
+    "name": "Chad",
+    "lon": 15.0444,
+    "lat": 12.1067
+  },
+  {
+    "name": "Republic of Korea",
+    "lon": 127.0214,
+    "lat": 37.2635
+  },
+  {
+    "name": "India",
+    "lon": 77.3546,
+    "lat": 11.1154
+  },
+  {
+    "name": "Viet Nam",
+    "lon": 105.7833,
+    "lat": 10.0333
+  },
+  {
+    "name": "South Africa",
+    "lon": 25.5701,
+    "lat": -33.918
+  },
+  {
+    "name": "Russian Federation",
+    "lon": 61.4297,
+    "lat": 55.1544
+  },
+  {
+    "name": "Oman",
+    "lon": 58.5922,
+    "lat": 23.6139
+  },
+  {
+    "name": "Nepal",
+    "lon": 85.3206,
+    "lat": 27.7017
+  },
+  {
+    "name": "United States of America",
+    "lon": -81.6557,
+    "lat": 30.3322
+  },
+  {
+    "name": "Iran (Islamic Republic of)",
+    "lon": 50.8764,
+    "lat": 34.6401
+  },
+  {
+    "name": "Russian Federation",
+    "lon": 73.4,
+    "lat": 55
+  },
+  {
+    "name": "Democratic Republic of the Congo",
+    "lon": 22.4166,
+    "lat": -5.8962
+  },
+  {
+    "name": "Russian Federation",
+    "lon": 50.15,
+    "lat": 53.2001
+  },
+  {
+    "name": "India",
+    "lon": 75.8561,
+    "lat": 25.1665
+  },
+  {
+    "name": "Iran (Islamic Republic of)",
+    "lon": 48.6693,
+    "lat": 31.3203
+  },
+  {
+    "name": "Ireland",
+    "lon": -6.2489,
+    "lat": 53.3331
+  },
+  {
+    "name": "China",
+    "lon": 104.737,
+    "lat": 31.4839
+  },
+  {
+    "name": "China",
+    "lon": 110.3596,
+    "lat": 21.2662
+  },
+  {
+    "name": "United States of America",
+    "lon": -78.6375,
+    "lat": 35.7789
+  },
+  {
+    "name": "Venezuela (Bolivarian Republic of)",
+    "lon": -69.3228,
+    "lat": 10.0739
+  },
+  {
+    "name": "China",
+    "lon": 114.3503,
+    "lat": 36.0944
+  },
+  {
+    "name": "Bolivia (Plurinational State of)",
+    "lon": 18,
+    "lat": -17.3895
+  },
+  {
+    "name": "Venezuela (Bolivarian Republic of)",
+    "lon": -67.5958,
+    "lat": 10.2469
+  },
+  {
+    "name": "Libya",
+    "lon": 13.1875,
+    "lat": 32.8752
+  },
+  {
+    "name": "India",
+    "lon": 81.2806,
+    "lat": 21.1887
+  },
+  {
+    "name": "Morocco",
+    "lon": -4.9998,
+    "lat": 34.0372
+  },
+  {
+    "name": "Mexico",
+    "lon": -100.9833,
+    "lat": 22.15
+  },
+  {
+    "name": "China",
+    "lon": 106.9365,
+    "lat": 27.7113
+  },
+  {
+    "name": "Brazil",
+    "lon": -48.5492,
+    "lat": -27.5967
+  },
+  {
+    "name": "Russian Federation",
+    "lon": 39.7032,
+    "lat": 47.2178
+  },
+  {
+    "name": "United States of America",
+    "lon": -86.783,
+    "lat": 36.161
+  },
+  {
+    "name": "Nigeria",
+    "lon": 6.7885,
+    "lat": 6.1454
+  },
+  {
+    "name": "United States of America",
+    "lon": -90.0475,
+    "lat": 35.1408
+  },
+  {
+    "name": "Niger",
+    "lon": 2.1098,
+    "lat": 13.5137
+  },
+  {
+    "name": "Netherlands",
+    "lon": 4.8897,
+    "lat": 52.374
+  },
+  {
+    "name": "India",
+    "lon": 79.4167,
+    "lat": 28.35
+  },
+  {
+    "name": "China",
+    "lon": 118.5785,
+    "lat": 37.4533
+  },
+  {
+    "name": "Kenya",
+    "lon": 39.6636,
+    "lat": -4.0547
+  },
+  {
+    "name": "Russian Federation",
+    "lon": 56.0456,
+    "lat": 54.7852
+  },
+  {
+    "name": "Israel",
+    "lon": 34.9914,
+    "lat": 32.8133
+  },
+  {
+    "name": "Mozambique",
+    "lon": 32.5892,
+    "lat": -25.9653
+  },
+  {
+    "name": "United States of America",
+    "lon": -111.8926,
+    "lat": 40.7547
+  },
+  {
+    "name": "El Salvador",
+    "lon": -89.1872,
+    "lat": 13.6894
+  },
+  {
+    "name": "China",
+    "lon": 122.1136,
+    "lat": 37.5017
+  },
+  {
+    "name": "India",
+    "lon": 76.6393,
+    "lat": 12.2979
+  },
+  {
+    "name": "India",
+    "lon": 78.6856,
+    "lat": 10.805
+  },
+  {
+    "name": "China",
+    "lon": 113.15,
+    "lat": 27.8333
+  },
+  {
+    "name": "Turkey",
+    "lon": 30.6956,
+    "lat": 36.9081
+  },
+  {
+    "name": "Viet Nam",
+    "lon": 106.6835,
+    "lat": 20.8648
+  },
+  {
+    "name": "Saudi Arabia",
+    "lon": 50.1033,
+    "lat": 26.4344
+  },
+  {
+    "name": "Georgia",
+    "lon": 44.8337,
+    "lat": 41.6941
+  },
+  {
+    "name": "China",
+    "lon": 120.0768,
+    "lat": 29.3151
+  },
+  {
+    "name": "Argentina",
+    "lon": -68.8272,
+    "lat": -32.8908
+  },
+  {
+    "name": "China",
+    "lon": 123.765,
+    "lat": 41.2886
+  },
+  {
+    "name": "Armenia",
+    "lon": 44.5146,
+    "lat": 40.182
+  },
+  {
+    "name": "Thailand",
+    "lon": 98.9847,
+    "lat": 18.7904
+  },
+  {
+    "name": "China",
+    "lon": 119.512,
+    "lat": 35.4034
+  },
+  {
+    "name": "Mexico",
+    "lon": -89.6167,
+    "lat": 20.9667
+  },
+  {
+    "name": "China",
+    "lon": 114.3483,
+    "lat": 34.7911
+  },
+  {
+    "name": "Republic of Korea",
+    "lon": 128.6811,
+    "lat": 35.2281
+  },
+  {
+    "name": "Mauritania",
+    "lon": -15.9785,
+    "lat": 18.0858
+  },
+  {
+    "name": "Russian Federation",
+    "lon": 92.7917,
+    "lat": 56.0097
+  },
+  {
+    "name": "China",
+    "lon": 118.2924,
+    "lat": 33.9681
+  },
+  {
+    "name": "Germany",
+    "lon": 6.95,
+    "lat": 50.9333
+  },
+  {
+    "name": "China",
+    "lon": 106.0847,
+    "lat": 30.7951
+  },
+  {
+    "name": "China",
+    "lon": 119.4489,
+    "lat": 32.2027
+  },
+  {
+    "name": "Indonesia",
+    "lon": 106.8019,
+    "lat": -6.6065
+  },
+  {
+    "name": "India",
+    "lon": 76.7933,
+    "lat": 30.7343
+  },
+  {
+    "name": "China",
+    "lon": 110.7836,
+    "lat": 32.6445
+  },
+  {
+    "name": "Nigeria",
+    "lon": 7.4383,
+    "lat": 10.5222
+  },
+  {
+    "name": "Indonesia",
+    "lon": 101.45,
+    "lat": 0.5333
+  },
+  {
+    "name": "Sierra Leone",
+    "lon": -13.2299,
+    "lat": 8.484
+  },
+  {
+    "name": "China",
+    "lon": 110.2864,
+    "lat": 25.2819
+  },
+  {
+    "name": "India",
+    "lon": 78.0833,
+    "lat": 27.8833
+  },
+  {
+    "name": "France",
+    "lon": 3.0586,
+    "lat": 50.633
+  },
+  {
+    "name": "Democratic Republic of the Congo",
+    "lon": 25.2,
+    "lat": 0.5167
+  },
+  {
+    "name": "China",
+    "lon": 110.9234,
+    "lat": 21.6627
+  },
+  {
+    "name": "China",
+    "lon": 121.1417,
+    "lat": 41.1078
+  },
+  {
+    "name": "United States of America",
+    "lon": -85.7631,
+    "lat": 38.2419
+  },
+  {
+    "name": "Russian Federation",
+    "lon": 56.2855,
+    "lat": 58.0174
+  },
+  {
+    "name": "United States of America",
+    "lon": -77.4382,
+    "lat": 37.5432
+  },
+  {
+    "name": "India",
+    "lon": 91.7503,
+    "lat": 26.1735
+  },
+  {
+    "name": "China",
+    "lon": 117.5542,
+    "lat": 34.8647
+  },
+  {
+    "name": "China",
+    "lon": 122.2283,
+    "lat": 40.6648
+  },
+  {
+    "name": "Nicaragua",
+    "lon": -86.2504,
+    "lat": 12.1328
+  },
+  {
+    "name": "Mexico",
+    "lon": -115.4683,
+    "lat": 32.6519
+  },
+  {
+    "name": "Russian Federation",
+    "lon": 39.1843,
+    "lat": 51.672
+  },
+  {
+    "name": "India",
+    "lon": 78.7833,
+    "lat": 28.8333
+  },
+  {
+    "name": "India",
+    "lon": 75.0106,
+    "lat": 15.4587
+  },
+  {
+    "name": "China",
+    "lon": 118.9152,
+    "lat": 42.2646
+  },
+  {
+    "name": "Bangladesh",
+    "lon": 89.5644,
+    "lat": 22.8098
+  },
+  {
+    "name": "Belgium",
+    "lon": 4.4035,
+    "lat": 51.2199
+  },
+  {
+    "name": "Russian Federation",
+    "lon": 44.5018,
+    "lat": 48.7194
+  },
+  {
+    "name": "Mexico",
+    "lon": -102.3,
+    "lat": 21.8833
+  },
+  {
+    "name": "China",
+    "lon": 112.927,
+    "lat": 27.8283
+  },
+  {
+    "name": "Ukraine",
+    "lon": 30.7326,
+    "lat": 46.4775
+  },
+  {
+    "name": "China",
+    "lon": 112.5259,
+    "lat": 32.9999
+  },
+  {
+    "name": "India",
+    "lon": 85.8333,
+    "lat": 20.2333
+  },
+  {
+    "name": "Netherlands",
+    "lon": 4.4792,
+    "lat": 51.9225
+  },
+  {
+    "name": "Congo",
+    "lon": 11.8635,
+    "lat": -4.7761
+  },
+  {
+    "name": "China",
+    "lon": 107.2004,
+    "lat": 34.3651
+  },
+  {
+    "name": "China",
+    "lon": 116.1647,
+    "lat": 23.2967
+  },
+  {
+    "name": "India",
+    "lon": 78.1667,
+    "lat": 11.65
+  }
+]

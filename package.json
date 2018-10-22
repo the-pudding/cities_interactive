@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "fontfaceobserver": "^2.0.13",
+    "geolib": "2.0.24",
     "lodash.debounce": "^4.0.8",
     "nouislider": "^12.0.0",
     "promise-polyfill": "^8.1.0",
