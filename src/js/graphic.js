@@ -34,18 +34,75 @@ function getStartingCoordinates() {
 function setupMap(startCoords) {
 	console.timeEnd('locate');
 	console.log(startCoords);
-	const layer_2015 = 'full-layer copy';
-	const layerMadeVisible = layer_2015;
-	let deltaMapBuilt = false;
-	const makeMap = true;
-	let map;
-	let compareMap;
-	const beforeContainer = d3.select('.before-map-container');
-	let currentMode = 'present';
-	let deltaMap;
-	const deltaMapContainer = d3.select('.delta-map-container');
-	function changeView(view) {
-		if (view != 'delta-button' && currentMode == 'delta' && deltaMapBuilt) {
+}
+
+function init() {
+
+	var tourStop = 0;
+	var tourObject = [
+		{
+			text:"let's look at america",
+			location:{
+				center:[-92.541666,29.895985],
+				zoom:4,
+				bearing:-1.55,
+				pitch:60,
+				speed:.2,
+				easing: function (t) {
+					return t;
+				}
+			},
+			button:"fly to us"
+		},
+		{
+			text:"We know China has a big population, but seeing the scale of megacities helps",
+			location:{
+				center:[120.887528,29.174370],
+				zoom:4,
+				bearing:-41.58,
+				pitch:57,
+				speed:.2,
+				easing: function (t) {
+					return t;
+				}
+			},
+			button:"fly to china"
+		},
+		{
+			text:"We know China has a big population, but seeing the scale of megacities helps",
+			location:{
+				center:[113.892168,22.922493],
+				zoom:7.82,
+				bearing:24.00,
+				pitch:58,
+				speed:.8,
+				easing: function (t) {
+					return t;
+				}
+			},
+			button:"fly to china"
+		}
+	]
+
+	var tourContainer = d3.select(".tour-container");
+	var tourHidden = true;
+	var startScreen = d3.select(".start-screen");
+	var startButton = startScreen.select(".start-button");
+	var layer_2015 = "full-layer copy"
+	var layerMadeVisible = layer_2015;
+	var deltaMapBuilt = false;
+	var makeMap = true;
+	var map;
+	var compareMap;
+	var beforeContainer  = d3.select(".before-map-container");
+	var currentMode = "present"
+	var deltaMap;
+	var deltaMapContainer = d3.select(".delta-map-container");
+	var compareMapContainer = d3.select("#compare-map");
+	var compareMapBuilt = false;
+
+	function changeView(view){
+		if(view != "delta-button" && currentMode == "delta" && deltaMapBuilt){
 			map.jumpTo({
 				center: deltaMap.getCenter(),
 				zoom: deltaMap.getZoom(),
@@ -55,26 +112,29 @@ function setupMap(startCoords) {
 		}
 		if (view == 'compare-button') {
 			map.resize();
-			beforeContainer.classed('extended', true);
-			beforeContainer
-				.transition()
-				.duration(200)
-				.style('width', '50%')
-				.on('end', d => {
-					currentMode = 'current';
+			beforeContainer.classed("extended",true);
+			beforeContainer.transition().duration(400).style("width","50%").on("end",function(d){
+				currentMode = "compare";
+				if(!compareMapBuilt){
 					makeCompareMap();
-					map.resize();
-				});
-		} else if (currentMode == 'compare') {
-			beforeContainer.classed('extended', false);
-			beforeContainer
-				.transition()
-				.duration(200)
-				.style('width', '0%')
-				.on('end', d => {
-					// compareMap.remove();
-					map.resize();
-				});
+				}
+				else{
+					compareMap.jumpTo({
+						center: map.getCenter(),
+						zoom: map.getZoom(),
+						pitch: map.getPitch(), // pitch in degrees
+						bearing: map.getBearing() // bearing in degrees
+					});
+				}
+				map.resize();
+			});
+		}
+		else if(currentMode == "compare") {
+			beforeContainer.classed("extended",false);
+			beforeContainer.transition().duration(400).style("width","0%").on("end",function(d){
+				// compareMap.remove();
+				map.resize();
+			});
 		}
 		if (view == 'delta-button') {
 			currentMode = 'delta';
@@ -112,41 +172,74 @@ function setupMap(startCoords) {
 			map.setLayoutProperty(layer_2015, 'visibility', 'none');
 		}
 	}
-	function createToggles() {
-		const topTogglesContainer = d3.select('.top-toggles');
-		topTogglesContainer.selectAll('div').on('click', function(d) {
-			changeView(d3.select(this).attr('id'));
-			topTogglesContainer
-				.selectAll('div')
-				.select('p')
-				.classed('top-toggle-active', false);
-			d3.select(this)
-				.select('p')
-				.classed('top-toggle-active', true);
+	function setupTourMode(){
+		tourContainer.select(".tour-text").text(tourObject[tourStop].text);
+		tourContainer.select(".tour-button").text(tourObject[tourStop].button).on("click",function(d){
+			flyToTour(tourObject[tourStop]);
+			if(tourStop != 0){
+				tourContainer.select(".tour-text").text(tourObject[tourStop].text);
+				tourContainer.select(".tour-button").text(tourObject[tourStop].button);
+			}
 		});
+		tourContainer.select(".tour-hide").on("click",function(d){
+			if(!tourHidden){
+				tourHidden = true;
+				tourContainer.classed("tour-hidden",true);
+			}
+			else{
+				tourHidden = false;
+				tourContainer.classed("tour-hidden",false);
+			}
+		})
+	}
+
+	function flyToTour(location){
+			map.flyTo(location.location)
+			tourStop = tourStop + 1;
+			// 		map.flyTo({
+			// 	bearing: 15.20,
+			// 	speed: 0.1, // make the flying slow
+			// 	curve: 1, // change the speed at which it zooms out
+			// 	pitch: 44,
+			// 	easing: function (t) {
+			// 			return t;
+			// 	}
+			// })
+
+	}
+
+	function createToggles(){
+
+		var topTogglesContainer = d3.select(".top-toggles");
+
+		topTogglesContainer.selectAll("div").on("click",function(d){
+			changeView(d3.select(this).attr("id"));
+			topTogglesContainer.selectAll("div").select("p").classed("top-toggle-active",false);
+			d3.select(this).select("p").classed("top-toggle-active",true);
+		})
 	}
 	function makeCompareMap() {
 		compareMap = new mapboxgl.Map({
 			container: 'compare-map',
 			// style: 'mapbox://styles/mapbox/dark-v9',
-			style: 'mapbox://styles/dock4242/cjnel8krq2ltq2spteciqe2x3?optimize=true',
-			center: [startCoords.lon, startCoords.lat],
-			zoom: 8,
-			pitch: 60, // pitch in degrees
-			bearing: 0 // bearing in degrees
+			style: 'mapbox://styles/dock4242/cjngbd5r047lc2rqjsj0ajwt0?optimize=true',
+			center: map.getCenter(),
+			zoom: map.getZoom(),
+			pitch: map.getPitch(), // pitch in degrees
+			bearing: map.getBearing(), // bearing in degrees
 		});
-		compareMap.on('load', d => {
-			compareMap.setLayoutProperty('2015-gte-20-limited', 'visibility', 'none');
-			compareMap.setLayoutProperty(
-				'1990-gte-20-limited',
-				'visibility',
-				'visible'
-			);
-			const combinedMap = new mapboxgl.Compare(map, compareMap, {
-				// Set this to enable comparing two maps by mouse movement:
-				// mousemove: true
+
+		compareMap.on("load",function(d){
+			// compareMap.setLayoutProperty("2015-gte-20-limited", 'visibility', 'none');
+			// compareMap.setLayoutProperty("1990-gte-20-limited", 'visibility', 'visible');
+
+			var combinedMap = new mapboxgl.Compare(map, compareMap, {
+					// Set this to enable comparing two maps by mouse movement:
+					// mousemove: true
 			});
-		});
+
+			compareMapContainer.style("pointer-events","all");
+		})
 	}
 	function delta() {
 		deltaMapBuilt = true;
@@ -210,7 +303,18 @@ function setupMap(startCoords) {
 		//     // Set this to enable comparing two maps by mouse movement:
 		//     // mousemove: true
 		// });
-		map.on('load', () => {
+		map.on('load',function(){
+			startButton.classed("start-active",true).select("p").text("Start").on("click",function(d){
+				setupTourMode();
+				startScreen.transition().duration(500).style("opacity",0).on("end",function(d){
+					d3.select(".top-header").transition().duration(500).delay(100).style("transform","translate(0px,0px)")
+					d3.select(".tour-container").transition().duration(0).delay(500).on("end",function(d){
+						d3.select(this).classed("tour-hidden",false).classed("tour-hidden-start",false);
+						tourHidden = false;
+					})
+					startScreen.remove();
+				});
+			});
 			// map.setLayoutProperty("all-5k", 'visibility', 'none');
 			// map.setLayoutProperty("all-1k", 'visibility', 'none');
 			// map.setLayoutProperty("2015-gte-20-limited", 'visibility', 'visible');
