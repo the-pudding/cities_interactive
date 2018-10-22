@@ -55,6 +55,20 @@ function init() {
 				}
 			},
 			button:"fly to china"
+		},
+		{
+			text:"africa has",
+			location:{
+				center:[113.892168,22.922493],
+				zoom:7.82,
+				bearing:24.00,
+				pitch:58,
+				speed:.8,
+				easing: function (t) {
+					return t;
+				}
+			},
+			button:"fly to china"
 		}
 	]
 
@@ -159,10 +173,6 @@ function init() {
 		tourContainer.select(".tour-text").text(tourObject[tourStop].text);
 		tourContainer.select(".tour-button").text(tourObject[tourStop].button).on("click",function(d){
 			flyToTour(tourObject[tourStop]);
-			if(tourStop != 0){
-				tourContainer.select(".tour-text").text(tourObject[tourStop].text);
-				tourContainer.select(".tour-button").text(tourObject[tourStop].button);
-			}
 		});
 		tourContainer.select(".tour-hide").on("click",function(d){
 			if(!tourHidden){
@@ -178,7 +188,12 @@ function init() {
 
 	function flyToTour(location){
 			map.flyTo(location.location)
+			if(tourStop != 0){
+				tourContainer.select(".tour-text").text(tourObject[tourStop].text);
+				tourContainer.select(".tour-button").text(tourObject[tourStop].button);
+			}
 			tourStop = tourStop + 1;
+
 			// 		map.flyTo({
 			// 	bearing: 15.20,
 			// 	speed: 0.1, // make the flying slow
