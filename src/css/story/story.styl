@@ -1,4 +1,89 @@
 
+.mapboxgl-ctrl-attrib
+  a
+    border none
+
+.mapboxgl-ctrl-logo
+  text-decoration none
+  border none
+.start-screen
+  position absolute
+  height 100vh
+  width 100vw
+  z-index 1000
+  background linear-gradient(180deg, #f7f7f7 0px, rgba(247, 247, 247, 0.85) 58%, rgba(255, 255, 255, 0) 100%)
+  display flex
+  flex-direction column
+  justify-content center
+  align-items center
+  font-family 'Atlas Grotesk Web'
+  .byline
+    position absolute
+    top 1.7rem
+    right 2rem
+    p
+      font-size 12px
+      color #737373
+      a
+        color #737373
+        border-color #737373
+        &:visited
+          border-color #737373
+  .mountain
+    margin-top -5rem
+  .start-button
+    background #4264FB
+    border-radius 5px
+    margin-top 1rem
+    min-width 150px
+    background #efe7d4
+    transition background .5s
+    p
+      font-size 18px
+      color black
+      padding 5px 20px
+      font-weight 500
+      text-align center
+      transition color .5s
+  .start-active
+    cursor hand
+    cursor pointer
+    background #4264FB
+    p
+      color white
+    &:hover
+      background green
+
+  p
+    margin 0px
+  .big-text
+    font-size 48px
+    font-weight 300
+  .sub-text
+    font-size 15px
+    font-weight 500
+    color #0C4135
+    text-transform uppercase
+    letter-spacing 1.5px
+    margin-top -5px
+  .prose
+    margin-top 3rem
+    width 530px
+    p
+      text-align center
+      font-size 16px
+      font-weight 400
+      margin-bottom 1.5rem
+      &:last-of-type
+        font-weight 500
+
+  .logo
+    width 118px
+    position absolute
+    top 1rem
+    left 2rem
+    svg
+      width 100%
 .delta-map-container
   position absolute
   top 0px
@@ -18,23 +103,35 @@
   bottom 0px
   left 2rem
   padding 1rem 1rem
-  background rgba(0,0,0,.5)
+  background rgba(0,0,0,.8)
   color white
-  max-width 250px
+  max-width 300px
+  border-top-left-radius 5px
+  border-top-right-radius 5px
   display flex
   flex-wrap wrap
   justify-content space-between
+  transition transform .5s
   .tour-hide
     position absolute
     top 0px
     left 0px
     z-index 100
     transform translate(20px, -100%)
-    background rgba(0,0,0,.5)
+    background rgba(0,0,0,.8)
     height 20px
     padding 0px 5px
     border-top-left-radius 5px
     border-top-right-radius 5px
+    cursor hand
+    cursor pointer
+    transition all .5s
+    .tour-show-arrow
+      display none
+      width 25px
+      div
+        svg
+          width 100%
     .tour-hide-arrow
       width 25px
       div
@@ -63,7 +160,7 @@
       .tour-toggle-text-current, .tour-toggle-text-amount
         font-size 13px
         font-weight 500
-        color rgba(255,255,255,.7)
+        color rgba(255,255,255,1)
         display inline-block
       .tour-toggle-text-current
         margin 0px
@@ -75,14 +172,39 @@
   .tour-button
     border-radius 5px
     font-family 'Atlas Grotesk Web'
-    background rgba(0,0,0,.5)
+    background rgba(0,0,0,1)
     color white
-    font-size 13px
-    font-weight 500
-    padding 5px 15px
+    font-size 11px
+    letter-spacing .5px
+    font-weight 600
+    padding 9px 15px
     margin 0px
+    position relative
+    text-transform uppercase
+    padding-right 50px
+    &:after
+      position absolute
+      content '✈️'
+      right 8px
+      font-size 18px
+      top 50%
+      transform translate(0,-50%)
 
+.tour-hidden
+  transform translate(0,100%)
+  transition all .5s
+  .tour-hide
+    width 100px
+    height 30px
+    transition all .5s
+    background black
+    .tour-show-arrow
+      display block
+    .tour-hide-arrow
+      display none
 
+.tour-hidden-start
+  transform translate(0,150%)
 .screen
   height 100vh
   width 100vw
@@ -90,7 +212,7 @@
   top 0px
   left 0px
   pointer-events none
-  background linear-gradient(180deg, rgb(134, 153, 158) 0%, rgba(134, 153, 158,.1) 30%, rgba(0,0,0,0) 100%)
+  background linear-gradient(180deg, #f7f7f7 20px, rgba(134,153,158,0) 150px, rgba(0,0,0,0) 100%)
   transform translate3d(0,0,0)
   z-index 10
 .mapboxgl-compare
@@ -103,6 +225,7 @@
   display flex
   justify-content center
   z-index 1000
+  transform translate(0,-200%)
   .top-toggles
     display flex
     justify-content center
@@ -124,15 +247,20 @@
       p:not(.top-toggle-active)
         &:hover
           color #4c4c4c
-          background #ccc
+          background #cecece
           box-shadow none
           transition all .05s
+          height 50px
       &:nth-of-type(2)
         .top-toggle-active
           height auto
           border-bottom-left-radius 0px
           border-bottom-right-radius 0px
           position relative
+          height 70px
+          box-shadow 0px 2px 4px 0px rgba(0, 0, 0, 0.27)
+          border-bottom-right-radius 5px
+          border-bottom-left-radius 5px
           &:after
             width 100%
             content 'Latest Data from 2015'
@@ -144,12 +272,11 @@
             margin 0 auto
             text-align center
             background #f6f7f7
-            transform translate(0px, 100%)
+            transform translate(0px, 0%)
             padding 3px 0px
             border-bottom-right-radius 5px
             border-bottom-left-radius 5px
             font-weight 400
-            box-shadow 0px 2px 4px 0px rgba(0, 0, 0, 0.2784313725490196)
       p
         margin 0px
         padding 10px 20px
@@ -181,10 +308,16 @@
     border none
     svg
       width 100%
-      fill white
-
+      fill black
+.before-map-container
+  height 100vh
+  position relative
+  width 0px
+  .before-toggles
+    display none
 .extended
   .before-toggles
+    display block
     width 6px
     height 100vh
     background white
@@ -204,38 +337,29 @@
         background #2A2A2A
         color #AAAAAA
         margin 0px
+        margin-top -1px
     .before-historic-toggles
       position absolute
       top 50%
       left 0px
       height 1px
       transform translate(-100%,0px)
+      font-family 'Atlas Grotesk Web'
       .before-historic-toggle
         margin 0px
         padding 5px 5px
         transform translate(0px,-50%)
         background #2A2A2A
         color #AAAAAA
+        font-size 14px
+        text-align center
+        margin-top -1px
     .before-historic-toggles, .before-present-toggles
       .before-toggle-active
         background white
         color black
+        font-size 16px
 
-
-
-.before-map-container
-  height 100vh
-  position relative
-  width 0px
-  .compare-button
-    position absolute
-    top 50%
-    right 0px
-    transform translate(100%,-50%)
-    z-index 1000
-    background black
-    color white
-    padding 1rem
 #content
   display flex
 
@@ -261,8 +385,8 @@
   p
     font-family 'Atlas Grotesk Web'
     font-size 14px
-    color white
-    font-weight 500
+    color black
+    font-weight 400
     margin 0px
 
 .map-container
@@ -297,6 +421,7 @@
 
 #compare-map
   width 100%
+  pointer-events none
 
 body { margin:0; padding:0; }
 #map { position:absolute; top:0; bottom:0; width:100%; }

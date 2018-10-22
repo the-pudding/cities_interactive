@@ -1,12 +1,45 @@
 
+<div class="start-screen">
+	<div class="logo">
+		@@include('logo.svg')
+	</div>
+	<div class="byline">
+		<p>By <a href="https://pudding.cool/author/matt-daniels/">Matt Daniels</a></p>
+	</div>
+	<div class="mountain">
+		<svg xmlns="http://www.w3.org/2000/svg" width="56" height="27" viewBox="0 0 56 27" fill="none">
+			<path d="M0 26H10.1887L13.3019 20.383L16.4151 24L22.3585 12.2766L28.3019 23L41.6038 2L54.9057 26" stroke="url(#paint0_linear)" stroke-width="2"/>
+			<defs>
+				<linearGradient id="paint0_linear" x1="27.4528" y1="-2" x2="27.4528" y2="26" gradientUnits="userSpaceOnUse">
+					<stop stop-color="#16276A"/>
+					<stop offset="0.359116" stop-color="#0C9275"/>
+					<stop offset="1" stop-color="#EEE6D2"/>
+				</linearGradient>
+			</defs>
+		</svg>
+	</div>
+	<p class="big-text">Human Terrain</p>
+	<p class="sub-text">Visualizing the world’s Population, in 3D</p>
+	<div class="prose">
+		<p>Kinshasa, DRC is now bigger than Paris.  Guangzhou, Hong Kong, and Shenzhen are  forming an epic, 40 million-person super city.</p>
+		<p>Over the past 30 years, the scale of population change is hard to grasp. How do you even visualize 10 million people?</p>
+	</div>
+	<div class="start-button">
+		<p>Loading...</p>
+	</div>
+</div>
+
 <div class="top-header">
 	<a href='https://pudding.cool' target='_blank' class='logo'>
 		@@include('logo.svg')
 	</a>
 	<div class="top-toggles">
 		<div id="compare-button"><p>Compare to 1990</p></div>
-		<div id="present-button"><p class="top-toggle-active">Present Day</p></div>
+		<div id="present-button"><p class="top-toggle-active">Population Present Day</p></div>
 		<div id="delta-button"><p>Change, 1990-2015</p></div>
+	</div>
+	<div class="population">
+		<p>100 million people</p>
 	</div>
 </div>
 <div class="screen">
@@ -38,9 +71,6 @@
 <div class="toggles">
 
 </div>
-<div class="population">
-	<p>100 million people</p>
-</div>
 
 <div class="delta-map-container">
 	<div class="delta-map">
@@ -48,10 +78,13 @@
 	</div>
 </div>
 
-<div class="tour-container">
+<div class="tour-container tour-hidden tour-hidden-start">
 	<div class="tour-hide">
 		<div class="tour-hide-arrow">
 			<div>@@include('chevron-down.svg')</div>
+		</div>
+		<div class="tour-show-arrow">
+			<div>@@include('chevron-up.svg')</div>
 		</div>
 	</div>
 	<div class="tour-text-container">
