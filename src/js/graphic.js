@@ -1,11 +1,6 @@
-import geolib from 'geolib';
-import startingCoords from './starting-coords.json';
-import locate from './utils/locate';
-
-// import 'intersection-observer';
-// import Stickyfill from 'stickyfilljs';
-// import scrollama from 'scrollama'
-/* global d3 */
+// import geolib from 'geolib';
+// import startingCoords from './starting-coords.json';
+// import locate from './utils/locate';
 
 function resize() {}
 
@@ -33,13 +28,13 @@ function getStartingCoordinates() {
 
 
 function setupMap(startCoords) {
-	console.timeEnd('locate');
-	console.log(startCoords);
+	// console.timeEnd('locate');
+	// console.log(startCoords);
 
 	var tourStop = 0;
 	var tourObject = [
 		{
-			text:"let's look at america",
+			text:"First let’s look at America, with its two megacities (over 10M people): NYC and LA.",
 			location:{
 				center:[-92.541666,29.895985],
 				zoom:4,
@@ -50,7 +45,7 @@ function setupMap(startCoords) {
 					return t;
 				}
 			},
-			button:"fly to us"
+			button:"Fly to wide-shot of US"
 		},
 		{
 			text:"We know China has a big population, but seeing the scale of megacities helps",
@@ -202,12 +197,11 @@ function setupMap(startCoords) {
 	}
 
 	function flyToTour(location){
+
 			map.flyTo(location.location)
-			if(tourStop != 0){
-				tourContainer.select(".tour-text").text(tourObject[tourStop].text);
-				tourContainer.select(".tour-button").text(tourObject[tourStop].button);
-			}
 			tourStop = tourStop + 1;
+			tourContainer.select(".tour-text").text(tourObject[tourStop].text);
+			tourContainer.select(".tour-button").text(tourObject[tourStop].button);
 
 			// 		map.flyTo({
 			// 	bearing: 15.20,
@@ -302,6 +296,8 @@ function setupMap(startCoords) {
 					.text(f(total_pop));
 			});
 		}
+
+		console.log(startCoords);
 		map = new mapboxgl.Map({
 			container: 'main-map',
 			// style: 'mapbox://styles/mapbox/light-v9',
@@ -343,8 +339,8 @@ function setupMap(startCoords) {
 }
 
 function init() {
-	console.time('locate');
-	getStartingCoordinates().then(setupMap);
+	setupMap({"lon":"-122.4374","lat":"37.7599"});
+	// getStartingCoordinates().then(setupMap);
 }
 
 export default { init, resize };
