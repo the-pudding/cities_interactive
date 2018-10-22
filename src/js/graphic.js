@@ -32,6 +32,7 @@ function getStartingCoordinates() {
 }
 
 function setupMap(startCoords) {
+	console.timeEnd('locate');
 	console.log(startCoords);
 	const layer_2015 = 'full-layer copy';
 	const layerMadeVisible = layer_2015;
@@ -225,6 +226,7 @@ function setupMap(startCoords) {
 }
 
 function init() {
+	console.time('locate');
 	getStartingCoordinates().then(setupMap);
 }
 
