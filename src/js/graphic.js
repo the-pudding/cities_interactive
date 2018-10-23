@@ -34,7 +34,7 @@ function setupMap(startCoords) {
 	var tourStop = 0;
 	var tourObject = [
 		{
-			text:"<b>Take a tour.</b> Let's look at a wide-shot of the US</b>",
+			text:"<b>Take a tour.</b> Let's take a step back and look at the US.</b>",
 			location:{
 
 			},
@@ -115,6 +115,7 @@ function setupMap(startCoords) {
 	var makeMap = true;
 	var map;
 	var compareMap;
+	var combinedMap;
 	var beforeContainer  = d3.select(".before-map-container");
 	var currentMode = "present"
 	var deltaMap;
@@ -131,6 +132,7 @@ function setupMap(startCoords) {
 				bearing: deltaMap.getBearing() // bearing in degrees
 			});
 		}
+
 		if (view == 'compare-button') {
 			map.resize();
 			beforeContainer.classed("extended",true);
@@ -153,7 +155,7 @@ function setupMap(startCoords) {
 		else if(currentMode == "compare") {
 			beforeContainer.classed("extended",false);
 			beforeContainer.transition().duration(400).style("width","0%").on("end",function(d){
-				// compareMap.remove();
+				compareMap.remove();
 				map.resize();
 			});
 		}
@@ -188,9 +190,9 @@ function setupMap(startCoords) {
 		}
 		if (view == 'present-button') {
 			currentMode = 'present';
-			map.setLayoutProperty(layer_2015, 'visibility', 'visible');
+			// map.setLayoutProperty(layer_2015, 'visibility', 'visible');
 		} else if (view != 'compare-button') {
-			map.setLayoutProperty(layer_2015, 'visibility', 'none');
+			// map.setLayoutProperty(layer_2015, 'visibility', 'none');
 		}
 	}
 	function setupTourMode(){
@@ -225,13 +227,18 @@ function setupMap(startCoords) {
 
 	function flyToTour(location,direction){
 
+			console.log(map);
+
 			if(direction=="backward"){
 				console.log("moving backward");
 				tourStop = tourStop - 1;
 				tourContainer.select(".tour-text").html(tourObject[tourStop].text);
 				tourContainer.select(".tour-button").text(tourObject[tourStop].button);
 				tourContainer.select(".tour-toggle-text-current").text(tourStop+1);
-				map.flyTo(tourObject[tourStop].location)
+				if(tourStop != 0){
+					map.flyTo(tourObject[tourStop].location)
+				}
+
 			}
 			else {
 				console.log("moving forward");
@@ -239,7 +246,9 @@ function setupMap(startCoords) {
 				tourContainer.select(".tour-text").html(tourObject[tourStop].text);
 				tourContainer.select(".tour-button").text(tourObject[tourStop].button);
 				tourContainer.select(".tour-toggle-text-current").text(tourStop+1);
-				map.flyTo(tourObject[tourStop].location)
+				if(tourStop != 0){
+					map.flyTo(tourObject[tourStop].location)
+				}
 			}
 			// 		map.flyTo({
 			// 	bearing: 15.20,
@@ -267,7 +276,7 @@ function setupMap(startCoords) {
 		compareMap = new mapboxgl.Map({
 			container: 'compare-map',
 			// style: 'mapbox://styles/mapbox/dark-v9',
-			style: 'mapbox://styles/dock4242/cjngbd5r047lc2rqjsj0ajwt0?optimize=true',
+			style: 'mapbox://styles/dock4242/cjnl0k08b88ai2slsjxzk0jii?optimize=true',
 			center: map.getCenter(),
 			zoom: map.getZoom(),
 			pitch: map.getPitch(), // pitch in degrees
@@ -278,10 +287,12 @@ function setupMap(startCoords) {
 			// compareMap.setLayoutProperty("2015-gte-20-limited", 'visibility', 'none');
 			// compareMap.setLayoutProperty("1990-gte-20-limited", 'visibility', 'visible');
 
-			var combinedMap = new mapboxgl.Compare(map, compareMap, {
+			combinedMap = new mapboxgl.Compare(map, compareMap, {
 					// Set this to enable comparing two maps by mouse movement:
 					// mousemove: true
 			});
+
+
 
 			compareMapContainer.style("pointer-events","all");
 		})
@@ -290,12 +301,15 @@ function setupMap(startCoords) {
 		deltaMapBuilt = true;
 		deltaMap = new mapboxgl.Map({
 			container: 'delta-map',
-			style: 'mapbox://styles/dock4242/cjnfclc780ham2rufqmsufejy?optimize=true',
+			//style: 'mapbox://styles/mapbox/cjnkyuronejw32snahlu7a5zc?optimize=true',
+			style:'mapbox://styles/dock4242/cjnl4y42g1apa2ro2r6zjpuqz?optimize=true',
+			//style: 'mapbox://styles/dock4242/cjlzoguw06l1z2rmvl1s10lpe?optimize=true',
 			center: map.getCenter(),
 			zoom: map.getZoom(),
 			pitch: map.getPitch(), // pitch in degrees
 			bearing: map.getBearing() // bearing in degrees
 		});
+
 	}
 	if (makeMap) {
 		mapboxgl.accessToken =
@@ -331,7 +345,7 @@ function setupMap(startCoords) {
 				const total_pop = d.population_count;
 				d3.select('.population')
 					.select('p')
-					.text(f(total_pop));
+					.text(f(total_pop)+" people on-screen");
 			});
 		}
 
@@ -362,11 +376,29 @@ function setupMap(startCoords) {
 					startScreen.remove();
 				});
 			});
+			getPopulation();
 		});
 		// get population function
+		var updatePopulationTimeout;
+		var timeoutSet = false;
 		map.on('moveend', () => {
-			console.log("moved");
-			getPopulation();
+
+
+			d3.select('.population')
+				.select('p')
+				.text("Fetching Population Count...");
+
+			if(timeoutSet){
+				clearTimeout(updatePopulationTimeout);
+			}
+			else{
+				timeoutSet = true;
+			}
+
+			updatePopulationTimeout = setTimeout(function(){
+				getPopulation();
+			},1000);
+
 		});
 	}
 	createToggles();

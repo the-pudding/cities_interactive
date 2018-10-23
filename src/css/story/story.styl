@@ -92,11 +92,11 @@
   width 100vw
   transform translate(100%,0%)
   pointer-events none
-  background rgb(201, 208, 209)
+  background #f7f7f7
   #delta-map
     width 100%
     pointer-events all
-    background #c9d0d1
+    background #f7f7f7
 .tour-container
   position absolute
   z-index 100
@@ -254,6 +254,9 @@
       cursor pointer
       p
         transition all .1s
+        span
+          display none
+
       .top-toggle-active
         background white
         color black
@@ -266,11 +269,58 @@
         height 53px
       p:not(.top-toggle-active)
         &:hover
-          color #4c4c4c
-          background #cecece
+          color black
+          background #ffffff
+          border-color #ccc
           box-shadow none
           transition all .05s
           height 50px
+      &:nth-of-type(3)
+        .top-toggle-active
+          height auto
+          border-bottom-left-radius 0px
+          border-bottom-right-radius 0px
+          position relative
+          height 70px
+          box-shadow 0px 2px 4px 0px rgba(0, 0, 0, 0.27)
+          border-bottom-right-radius 5px
+          border-bottom-left-radius 5px
+          &:after
+            width 100%
+            content ''
+            height 16px
+            font-size 11px
+            position absolute
+            left 0px
+            right 0px
+            bottom 0px
+            margin 0 auto
+            text-align center
+            background #f6f7f7
+            transform translate(0px, 0%)
+            padding 3px 0px
+            border-bottom-right-radius 5px
+            border-bottom-left-radius 5px
+            font-weight 400
+          span
+            display inline-block
+          .legend-change
+            display block
+            font-size 11px
+            position absolute
+            z-index 100
+            width 100%
+            left 0px
+            bottom 3px
+            display flex
+            justify-content center
+            span
+              &:nth-of-type(1)
+                margin-right 6px
+              &:nth-of-type(2)
+                margin-left 3px
+
+
       &:nth-of-type(2)
         .top-toggle-active
           height auto
@@ -301,13 +351,14 @@
         margin 0px
         padding 10px 20px
         font-family 'Atlas Grotesk Web'
-        background #2A2A2A
-        color rgba(255,255,255,.6)
-        font-weight 500
+        background #d8d8d8
+        border-bottom 3px solid #909090
+        color black
+        font-weight 400
         font-size 14px
         display block
         height 45px
-        box-shadow 0px 0px 8px 1px rgba(0, 0, 0, 0.29)
+        //box-shadow 0px 0px 8px 1px rgba(0, 0, 0, 0.29)
 
       &:nth-of-type(1)
         p
@@ -340,10 +391,10 @@
     display block
     width 6px
     height 100vh
-    background white
+    background black
     position absolute
     right 0px
-    box-shadow 0px 0px 3px 1px rgba(0, 0, 0, 0.21)
+    //box-shadow 0px 0px 3px 1px rgba(0, 0, 0, 0.21)
     z-index 100
     transform translate(50%,0px)
     .before-present-toggles
@@ -369,16 +420,19 @@
         margin 0px
         padding 5px 5px
         transform translate(0px,-50%)
-        background #2A2A2A
-        color #AAAAAA
+        background black
+        color white
         font-size 14px
+        font-weight 500
         text-align center
         margin-top -1px
+        margin-right -1px
     .before-historic-toggles, .before-present-toggles
       .before-toggle-active
-        background white
-        color black
+        background black
+        color white
         font-size 16px
+        font-weight 500
 
 #content
   display flex
