@@ -1,114 +1,154 @@
+<main id="content">
+	<div class="start-screen">
+		<div class="logo">
+			@@include('logo.svg')
+		</div>
+		<div class="byline">
+			<p>By <a href="https://pudding.cool/author/matt-daniels/">Matt Daniels</a></p>
+		</div>
+		<div class="mountain">
+			<svg xmlns="http://www.w3.org/2000/svg" width="56" height="27" viewBox="0 0 56 27" fill="none">
+				<path d="M0 26H10.1887L13.3019 20.383L16.4151 24L22.3585 12.2766L28.3019 23L41.6038 2L54.9057 26" stroke="url(#paint0_linear)" stroke-width="2"/>
+				<defs>
+					<linearGradient id="paint0_linear" x1="27.4528" y1="-2" x2="27.4528" y2="26" gradientUnits="userSpaceOnUse">
+						<stop stop-color="#16276A"/>
+						<stop offset="0.359116" stop-color="#0C9275"/>
+						<stop offset="1" stop-color="#EEE6D2"/>
+					</linearGradient>
+				</defs>
+			</svg>
+		</div>
+		<p class="big-text">Human Terrain</p>
+		<p class="sub-text">Visualizing the world’s Population, in 3D</p>
+		<div class="prose">
+			<p>Kinshasa is now bigger than Paris.  Guangzhou, Hong Kong, and Shenzhen are  forming an epic, 40 million-person super city.</p>
+			<p>Over the past 30 years, the scale of population change is hard to grasp. How do you even visualize 10 million people?</p>
+		</div>
+		<div class="start-button">
+			<p>Loading...</p>
+		</div>
+	</div>
 
-<div class="start-screen">
-	<div class="logo">
-		@@include('logo.svg')
+	<div class="top-header">
+		<a href="/" class="small-logo">
+	      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 225.858 254.917" enable-background="new 0 0 225.858 254.917" xml:space="preserve">
+	          <g id="left">
+	          	<g>
+	          		<defs>
+	          			<path id="SVGID_1_" d="M63.333,4.016L33.934,0.264l-30.601,30v1.57l8.035,1.572c9.951,1.832,11.965,8.637,11.965,56.031v106.304     c0,16.824,0.729,28.516-0.227,36.703L3.333,253.343v1.574c18-1.309,88.418-1.574,108.055-0.262l30.143-30l-78.197-8.25V4.016z"></path>
+	          		</defs>
+	          		<use xlink:href="#SVGID_1_" overflow="visible" fill="#DDDCDC"></use>
+	          		<clipPath id="SVGID_2_">
+	          			<use xlink:href="#SVGID_1_" overflow="visible"></use>
+	          		</clipPath>
+	          		<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="21.4277" y1="13.6758" x2="52.981" y2="45.229">
+	          			<stop offset="0" style="stop-color:#B4B4B5"></stop>
+	          			<stop offset="0.2766" style="stop-color:#B9B9B9"></stop>
+	          			<stop offset="0.6382" style="stop-color:#C7C7C7"></stop>
+	          			<stop offset="1" style="stop-color:#DDDCDC"></stop>
+	          		</linearGradient>
+	          		<polygon clip-path="url(#SVGID_2_)" fill="url(#SVGID_3_)" points="22.024,75.171 70.333,27.875 70.333,1.684 33.943,1.684     3.343,31.759   "></polygon>
+	          	</g>
+	          	<g>
+	          		<defs>
+	          			<path id="SVGID_4_" d="M102.333,1.684h51.151l55.838,116.994l-30.845,30.524c-14.535,14.414-39.029,22.39-72.492,22.39     c-1.572,0-10.652,0.061-12.652-0.459v-3.223l31.98-30.445l5.127,0.918c1.371-7.875,0.893-17.478,0.893-29.044V92.057     c0-42.42-8-58.572-29-58.572V1.684z"></path>
+	          		</defs>
+	          		<use xlink:href="#SVGID_4_" overflow="visible" fill="#DDDCDC"></use>
+	          		<clipPath id="SVGID_5_">
+	          			<use xlink:href="#SVGID_4_" overflow="visible"></use>
+	          		</clipPath>
+	          		<linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="101.7988" y1="1.8984" x2="151.7466" y2="51.8462">
+	          			<stop offset="0" style="stop-color:#B4B4B5"></stop>
+	          			<stop offset="0.3938" style="stop-color:#B6B7B7"></stop>
+	          			<stop offset="0.6306" style="stop-color:#BEBDBD"></stop>
+	          			<stop offset="0.8252" style="stop-color:#CACAC9"></stop>
+	          			<stop offset="0.997" style="stop-color:#DCDCDB"></stop>
+	          			<stop offset="1" style="stop-color:#DDDCDC"></stop>
+	          		</linearGradient>
+	          		<polygon clip-path="url(#SVGID_5_)" fill="url(#SVGID_6_)" points="126.902,76.148 168.245,34.128 150.731,1.684 102.333,1.684     102.333,33.684   "></polygon>
+	          	</g>
+	          </g>
+	          <g id="bottom">
+	          	<path fill="#B4B4B5" d="M155.552,137.831l-29.957,3.301l-31.864,30c2,0.52,10.881,0.52,12.453,0.52   c33.463,0,57.758-7.914,72.293-22.328l0.252,0.016l30.377-30.259L155.552,137.831z"></path>
+	          	<path fill="#B4B4B5" d="M111.935,254.655l29.949-30l-78.153-8.25l-29.517,8.512l-29.787,30   C23.927,253.608,92.298,253.343,111.935,254.655z"></path>
+	          </g>
+	          <g id="letter">
+	          	<path d="M56.189,165.741c0,47.395-3.142,54.199-13.092,56.031l-9.164,1.57v1.574c19.637-1.309,87.976-1.574,107.614-0.262v-1.832   l-11.781-1.574c-9.951-1.309-16.759-7.855-16.759-55.508V4.191c7.595-0.264,18.329-0.523,20.946-0.523   c20.684,0,29.588,15.969,29.588,58.389v17.281c0,42.416-8.904,58.649-29.064,58.649c-1.832,0-6.283,0-9.164-0.523v3.668   c3.145,0.52,9.949,0.52,11.52,0.52c59.961,0,89.025-25.396,89.025-68.075v-5.5C225.858,25.396,196.532,0,136.048,0   c-9.949,0-43.462,1.309-54.46,1.309c-9.426,0-36.919-0.26-47.654-1.045v1.57l9.164,1.572c9.95,1.832,13.092,8.637,13.092,56.031   V165.741"></path>
+	          </g>
+	          <g id="highlight">
+	          	<path fill="#323232" d="M105.333,6.723v159.019c0,27.109,2.973,43.223,8.328,52.152c-3.314-0.035-7.25-0.059-10.941-0.078   c-5.319-8.945-7.387-25.043-7.387-52.074V7.016C99.333,6.928,101.333,6.828,105.333,6.723z M165.146,8.779   c23.789,8.15,42.188,26.227,42.188,59.297v5.5c0,19.711-5.592,34.965-18.697,45.336c-6.984,5.531-15.236,11.044-25.816,14.731   c15.289-2.539,27.556-7.456,36.743-14.731c13.104-10.371,19.771-25.625,19.771-45.336v-5.5   C219.333,30.254,193.536,14.469,165.146,8.779z"></path>
+	          </g>
+	        </svg>
+		</a>
+		<a href='https://pudding.cool' target='_blank' class='logo'>
+			@@include('logo.svg')
+		</a>
+		<div class="top-toggles">
+			<div id="compare-button"><p>Compare to 1990</p></div>
+			<div id="present-button"><p class="top-toggle-active">Population Present Day</p></div>
+			<div id="delta-button"><p>Show change, 1990-2015
+				<span class="legend-change">
+					<span style="color:#bf4d2b;">▪ Decline</span>vs.
+					<span style="color:#357662;">▪ Growth</span>
+				</span>
+			</p></div>
+		</div>
+		<div class="population">
+			<p>Fetching Population Count...</p>
+		</div>
 	</div>
-	<div class="byline">
-		<p>By <a href="https://pudding.cool/author/matt-daniels/">Matt Daniels</a></p>
-	</div>
-	<div class="mountain">
-		<svg xmlns="http://www.w3.org/2000/svg" width="56" height="27" viewBox="0 0 56 27" fill="none">
-			<path d="M0 26H10.1887L13.3019 20.383L16.4151 24L22.3585 12.2766L28.3019 23L41.6038 2L54.9057 26" stroke="url(#paint0_linear)" stroke-width="2"/>
-			<defs>
-				<linearGradient id="paint0_linear" x1="27.4528" y1="-2" x2="27.4528" y2="26" gradientUnits="userSpaceOnUse">
-					<stop stop-color="#16276A"/>
-					<stop offset="0.359116" stop-color="#0C9275"/>
-					<stop offset="1" stop-color="#EEE6D2"/>
-				</linearGradient>
-			</defs>
-		</svg>
-	</div>
-	<p class="big-text">Human Terrain</p>
-	<p class="sub-text">Visualizing the world’s Population, in 3D</p>
-	<div class="prose">
-		<p>Kinshasa, DRC is now bigger than Paris.  Guangzhou, Hong Kong, and Shenzhen are  forming an epic, 40 million-person super city.</p>
-		<p>Over the past 30 years, the scale of population change is hard to grasp. How do you even visualize 10 million people?</p>
-	</div>
-	<div class="start-button">
-		<p>Loading...</p>
-	</div>
-</div>
+	<div class="screen">
 
-<div class="top-header">
-	<a href='https://pudding.cool' target='_blank' class='logo'>
-		@@include('logo.svg')
-	</a>
-	<div class="top-toggles">
-		<div id="compare-button"><p>Compare to 1990</p></div>
-		<div id="present-button"><p class="top-toggle-active">Population Present Day</p></div>
-		<div id="delta-button"><p>Show change, 1990-2015
-			<span class="legend-change">
-				<span style="color:#bf4d2b;">▪ Decline</span>vs.
-				<span style="color:#357662;">▪ Growth</span>
-			</span>
-		</p></div>
 	</div>
-	<div class="population">
-		<p>Fetching Population Count...</p>
-	</div>
-</div>
-<div class="screen">
-
-</div>
 
 
-<div class="map-container">
-	<div class="before-map-container">
-		<div class="before-toggles">
-			<div class="before-present-toggles">
-				<p class="before-present-toggle before-toggle-active">2015</p>
+	<div class="map-container">
+		<div class="before-map-container">
+			<div class="before-toggles">
+				<div class="before-present-toggles">
+					<p class="before-present-toggle before-toggle-active">2015</p>
+				</div>
+				<div class="before-historic-toggles">
+					<p class="before-historic-toggle before-toggle-active">1990</p>
+					<p class="before-historic-toggle">1975</p>
+					<p class="before-historic-toggle">2000</p>
+				</div>
 			</div>
-			<div class="before-historic-toggles">
-				<p class="before-historic-toggle before-toggle-active">1990</p>
-				<!-- <p class="before-historic-toggle">1975</p>
-				<p class="before-historic-toggle">2000</p> -->
+			<div id='compare-map' class='map'></div>
+		</div>
+		<div id='main-map' class='map'></div>
+		<div class="delta-map-container">
+			<div id='delta-map' class="map">
 			</div>
 		</div>
-		<div id='compare-map' class='map'></div>
 	</div>
-	<div id='main-map' class='map'></div>
-	<div class="delta-map-container">
-		<div id='delta-map' class="map">
+	<div class="tour-container tour-hidden tour-hidden-start">
+		<div class="tour-hide">
+			<div class="tour-hide-arrow">
+				<div>@@include('chevron-down.svg')</div>
+			</div>
+			<div class="tour-show-arrow">
+				<div>@@include('chevron-up.svg')</div>
+			</div>
+		</div>
+		<div class="tour-text-container">
+			<p class="tour-text">Something about world cities.</p>
+		</div>
+		<div class="tour-button">Fly to Kinshasa
+		</div>
+		<div class="tour-toggle">
+			<div class="tour-toggle-left tour-toggle-arrow">
+				<div>@@include('chevron-left.svg')</div>
+			</div>
+			<div class="tour-toggle-text">
+				<p class="tour-toggle-text-current">1
+				</p>
+				<p class="tour-toggle-text-amount">of 21
+				</p>
+			</div>
+			<div class="tour-toggle-right tour-toggle-arrow">
+				<div>@@include('chevron-right.svg')</div>
+			</div>
 		</div>
 	</div>
-</div>
-
-<div class="toggles">
-
-</div>
-
-<div class="delta-map-container">
-	<div class="delta-map">
-
-	</div>
-</div>
-
-<div class="tour-container tour-hidden tour-hidden-start">
-	<div class="tour-hide">
-		<div class="tour-hide-arrow">
-			<div>@@include('chevron-down.svg')</div>
-		</div>
-		<div class="tour-show-arrow">
-			<div>@@include('chevron-up.svg')</div>
-		</div>
-	</div>
-	<div class="tour-text-container">
-		<p class="tour-text">Something about world cities.</p>
-	</div>
-	<div class="tour-button">Fly to Kinshasa
-	</div>
-	<div class="tour-toggle">
-		<div class="tour-toggle-left tour-toggle-arrow">
-			<div>@@include('chevron-left.svg')</div>
-		</div>
-		<div class="tour-toggle-text">
-			<p class="tour-toggle-text-current">1
-			</p>
-			<p class="tour-toggle-text-amount">of 21
-			</p>
-		</div>
-		<div class="tour-toggle-right tour-toggle-arrow">
-			<div>@@include('chevron-right.svg')</div>
-		</div>
-	</div>
-</div>
+</main>

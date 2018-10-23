@@ -43,14 +43,14 @@ function setupMap(startCoords) {
 	var tourStop = 0;
 	var tourObject = [
 		{
-			text:"<b>Take a tour.</b> Note: the taller the block, the more people it represents. Let's see the US.</b>",
+			text:"<b>Take a tour.</b> Let's take a step back and look at the US.</b>",
 			location:{
 
 			},
 			button:"Fly to US"
 		},
 		{
-			text:"The US has about 320 million people and about 10 cities over 1 million. Let's gander at China.",
+			text:"shot of US",
 			location:{
 				center:[-92.541666,29.895985],
 				zoom:4,
@@ -62,10 +62,10 @@ function setupMap(startCoords) {
 				}
 
 			},
-			button:"Fly to China"
+			button:""
 		},
 		{
-			text:"China now has 100 cities over 1M. The cluster around Hong Kong is practically three NYCs.",
+			text:"shot of asia",
 			location:{
 				center:[120.887528,29.174370],
 				zoom:4,
@@ -77,10 +77,10 @@ function setupMap(startCoords) {
 				}
 
 			},
-			button:"Fly to Hong Kong"
+			button:""
 		},
 		{
-			text:"This is the Pearl River Delta, where three 10M+ cities are merging.",
+			text:"shot of hk",
 			location:{
 				center:[113.892168,22.922493],
 				zoom:8.01,
@@ -91,10 +91,10 @@ function setupMap(startCoords) {
 					return t;
 				}
 			},
-			button:"Fly to Africa"
+			button:""
 		},
 		{
-			text:"What happened in Asia is now set to happen in Africa. Today 1 in 6 people live on the continent.",
+			text:"shot of africa",
 			location:{
 				center:[27.90,-1.89],
 				zoom:3.97,
@@ -105,50 +105,13 @@ function setupMap(startCoords) {
 					return t;
 				}
 			},
-			button:"Fly to Lagos"
-		},
-		{
-			text:"By 2100, the world might be 1 in 3 African. This is Lagos, 13M people.",
-			location:{
-				center:[3.335080,6.426115],
-				zoom:6.86,
-				bearing:-112.80,
-				pitch:21.50,
-				speed:.8,
-				easing: function (t) {
-					return t;
-				}
-			},
-			button:"Fly to Kinshasa"
-		},
-		{
-			text:"Kinshasa has over 12M people, but grew differently, with few major roads or smaller cities connected to it.",
-			location:{
-				center:[15.500771,-4.345327],
-				zoom:7.63,
-				bearing:-30.40,
-				pitch:60,
-				speed:.8,
-				easing: function (t) {
-					return t;
-				}
-			},
-			button:"Shrinking Cities"
-		},
-		{
-			text:"This is the population change from 1990 to 2015. Population decline is in red, notably in city centers of America's rustbelt.",
-			location:{
-				center:[-83.539628,40.565428],
-				zoom:7.58,
-				bearing:-19.20,
-				pitch:57.50,
-				speed:.6,
-				easing: function (t) {
-					return t;
-				}
-			},
 			button:""
 		}
+
+
+
+
+
 	]
 
 	var tourContainer = d3.select(".tour-container");
@@ -219,7 +182,7 @@ function setupMap(startCoords) {
 		if (view == 'delta-button') {
 			currentMode = 'delta';
 			if (!deltaMapBuilt) {
-				delta(false);
+				delta();
 			} else {
 				deltaMap.jumpTo({
 					center: map.getCenter(),
@@ -241,22 +204,15 @@ function setupMap(startCoords) {
 					// deltaMap.remove();
 				});
 			if (view != 'compare-button') {
+				// map.setLayoutProperty("delta-1990-2015-limited", 'visibility', 'none');
+				// map.setLayoutProperty("neg-test-5", 'visibility', 'none');
 			}
 		}
 		if (view == 'present-button') {
 			currentMode = 'present';
-			var loadText = "Fetching Population Count...";
-			d3.select('.population')
-				.select('p')
-				.text(loadText);
-
-			var populationTimeout = setTimeout(function(){
-				getPopulation();
-			},1000);
-		} else{
-			d3.select('.population')
-				.select('p')
-				.text("");
+			// map.setLayoutProperty(layer_2015, 'visibility', 'visible');
+		} else if (view != 'compare-button') {
+			// map.setLayoutProperty(layer_2015, 'visibility', 'none');
 		}
 	}
 	function setupTourMode(){
@@ -288,18 +244,14 @@ function setupMap(startCoords) {
 			}
 		})
 	}
+
 	function flyToTour(location,direction){
 
+			console.log(map);
+
 			if(direction=="backward"){
-				if(tourStop == tourObject.length - 1){
-					changeView("present-button");
-					var topTogglesContainer = d3.select(".top-toggles");
-					topTogglesContainer.selectAll("div").select("p").classed("top-toggle-active",false);
-					d3.select("#present-button").select("p").classed("top-toggle-active",true);
-					tourContainer.select(".tour-button").style("opacity",null).style("pointer-events",null);
-				}
+				console.log("moving backward");
 				tourStop = tourStop - 1;
-				tourStop = Math.max(tourStop,0)
 				tourContainer.select(".tour-text").html(tourObject[tourStop].text);
 				tourContainer.select(".tour-button").text(tourObject[tourStop].button);
 				tourContainer.select(".tour-toggle-text-current").text(tourStop+1);
@@ -309,32 +261,25 @@ function setupMap(startCoords) {
 
 			}
 			else {
-				if(tourStop != tourObject.length - 1){
-					tourStop = tourStop + 1;
-					tourStop = Math.min(tourStop,tourObject.length - 1)
-
-					if(tourStop == tourObject.length - 1){
-						changeView("delta-button");
-						if(!deltaMapBuilt){
-							delta(true);
-						}
-						else{
-							deltaMap.flyTo(tourObject[tourStop].location)
-						}
-						var topTogglesContainer = d3.select(".top-toggles");
-						topTogglesContainer.selectAll("div").select("p").classed("top-toggle-active",false);
-						d3.select("#delta-button").select("p").classed("top-toggle-active",true);
-						tourContainer.select(".tour-button").style("opacity",0).style("pointer-events","none")
-
-					}
-					tourContainer.select(".tour-text").html(tourObject[tourStop].text);
-					tourContainer.select(".tour-button").text(tourObject[tourStop].button);
-					tourContainer.select(".tour-toggle-text-current").text(tourStop+1);
-					if(tourStop != 0){
-						map.flyTo(tourObject[tourStop].location)
-					}
+				console.log("moving forward");
+				tourStop = tourStop + 1;
+				tourContainer.select(".tour-text").html(tourObject[tourStop].text);
+				tourContainer.select(".tour-button").text(tourObject[tourStop].button);
+				tourContainer.select(".tour-toggle-text-current").text(tourStop+1);
+				if(tourStop != 0){
+					map.flyTo(tourObject[tourStop].location)
 				}
 			}
+			// 		map.flyTo({
+			// 	bearing: 15.20,
+			// 	speed: 0.1, // make the flying slow
+			// 	curve: 1, // change the speed at which it zooms out
+			// 	pitch: 44,
+			// 	easing: function (t) {
+			// 			return t;
+			// 	}
+			// })
+
 	}
 
 	function createToggles(){
@@ -373,75 +318,57 @@ function setupMap(startCoords) {
 			compareMapContainer.style("pointer-events","all");
 		})
 	}
-	function delta(tour) {
-
-		console.log(tour);
-
+	function delta() {
 		deltaMapBuilt = true;
-		var centerDelta = map.getCenter();
-		var zoomDelta = map.getZoom();
-		var pitchDelta = map.getPitch();
-		var bearingDelta = map.getBearing()
-
-		if(tour){
-			var tourData = tourObject[tourObject.length - 1].location;
-			console.log(tourData);
-			centerDelta = tourData.center;
-			zoomDelta = tourData.zoom;
-			pitchDelta = tourData.pitch;
-			bearingDelta = tourData.bearing;
-		}
-
 		deltaMap = new mapboxgl.Map({
 			container: 'delta-map',
 			//style: 'mapbox://styles/mapbox/cjnkyuronejw32snahlu7a5zc?optimize=true',
 			style:'mapbox://styles/dock4242/cjnl4y42g1apa2ro2r6zjpuqz?optimize=true',
 			//style: 'mapbox://styles/dock4242/cjlzoguw06l1z2rmvl1s10lpe?optimize=true',
-			center: centerDelta,
-			zoom: zoomDelta,
-			pitch: pitchDelta, // pitch in degrees
-			bearing: bearingDelta // bearing in degrees
+			center: map.getCenter(),
+			zoom: map.getZoom(),
+			pitch: map.getPitch(), // pitch in degrees
+			bearing: map.getBearing() // bearing in degrees
 		});
 
-		deltaMap.addControl(new mapboxgl.NavigationControl(),"bottom-right");
 	}
-	function getPopulation() {
-		const bounds = map.getBounds();
-		const geometry = {
-			geodesic: true,
-			type: 'Polygon',
-			coordinates: [
-				[
-					[bounds.getSouthWest().lng, bounds.getSouthWest().lat],
-					[bounds.getNorthWest().lng, bounds.getNorthWest().lat],
-					[bounds.getNorthEast().lng, bounds.getNorthEast().lat],
-					[bounds.getSouthEast().lng, bounds.getSouthEast().lat]
-				]
-			]
-		};
-		ee.data.setApiKey('AIzaSyADobnjzDCKXxK_K945fnA7bP85JXplQFE');
-		ee.initialize();
-		let imageForAnalysis = ee.Image('JRC/GHSL/P2016/POP_GPW_GLOBE_V1/2015');
-		imageForAnalysis = imageForAnalysis.clip(geometry);
-		const meanDictionary = imageForAnalysis.reduceRegion({
-			reducer: ee.Reducer.sum(),
-			geometry,
-			scale: 250,
-			maxPixels: 1e9
-		});
-		const p = d3.precisionPrefix(1e5, 1.3e6);
-		const f = d3.formatPrefix(`.${p}`, 1.3e6);
-		const toRoute = meanDictionary.evaluate(d => {
-			const total_pop = d.population_count;
-			d3.select('.population')
-				.select('p')
-				.text(f(total_pop)+" people reside on-screen");
-		});
-	}
-
 	if (makeMap) {
 		mapboxgl.accessToken =
 			'pk.eyJ1IjoiZG9jazQyNDIiLCJhIjoiY2pjazE5eTM2NDl2aDJ3cDUyeDlsb292NiJ9.Jr__XbmAolbLyzPDj7-8kQ';
+		function getPopulation() {
+			console.log('fetching population');
+			const bounds = map.getBounds();
+			const geometry = {
+				geodesic: true,
+				type: 'Polygon',
+				coordinates: [
+					[
+						[bounds.getSouthWest().lng, bounds.getSouthWest().lat],
+						[bounds.getNorthWest().lng, bounds.getNorthWest().lat],
+						[bounds.getNorthEast().lng, bounds.getNorthEast().lat],
+						[bounds.getSouthEast().lng, bounds.getSouthEast().lat]
+					]
+				]
+			};
+			ee.data.setApiKey('AIzaSyADobnjzDCKXxK_K945fnA7bP85JXplQFE');
+			ee.initialize();
+			let imageForAnalysis = ee.Image('JRC/GHSL/P2016/POP_GPW_GLOBE_V1/2015');
+			imageForAnalysis = imageForAnalysis.clip(geometry);
+			const meanDictionary = imageForAnalysis.reduceRegion({
+				reducer: ee.Reducer.sum(),
+				geometry,
+				scale: 250,
+				maxPixels: 1e9
+			});
+			const p = d3.precisionPrefix(1e5, 1.3e6);
+			const f = d3.formatPrefix(`.${p}`, 1.3e6);
+			const toRoute = meanDictionary.evaluate(d => {
+				const total_pop = d.population_count;
+				d3.select('.population')
+					.select('p')
+					.text(f(total_pop)+" people reside on-screen");
+			});
+		}
 
 		console.log(startCoords);
 		map = new mapboxgl.Map({
@@ -453,9 +380,6 @@ function setupMap(startCoords) {
 			pitch: 60, // pitch in degrees
 			bearing: 0 // bearing in degrees
 		});
-
-		map.addControl(new mapboxgl.NavigationControl(),"bottom-right");
-
 		//
 		// var combinedMap = new mapboxgl.Compare(map, afterMap, {
 		//     // Set this to enable comparing two maps by mouse movement:
@@ -479,14 +403,11 @@ function setupMap(startCoords) {
 		var updatePopulationTimeout;
 		var timeoutSet = false;
 		map.on('moveend', () => {
-			var loadText = "Fetching Population Count...";
-			if(currentMode != "present"){
-				loadText = ""
-			}
+
 
 			d3.select('.population')
 				.select('p')
-				.text(loadText);
+				.text("Fetching Population Count...");
 
 			if(timeoutSet){
 				clearTimeout(updatePopulationTimeout);
@@ -494,11 +415,11 @@ function setupMap(startCoords) {
 			else{
 				timeoutSet = true;
 			}
-			if(currentMode == "present"){
-				updatePopulationTimeout = setTimeout(function(){
-					getPopulation();
-				},1000);
-			}
+
+			updatePopulationTimeout = setTimeout(function(){
+				getPopulation();
+			},1000);
+
 		});
 	}
 	createToggles();

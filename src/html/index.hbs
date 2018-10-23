@@ -3,7 +3,7 @@
 
 <head>
 
-	<!-- {{> base/meta}} -->
+	{{> base/meta}}
 
 	<!-- smoosh -->
 	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
@@ -20,27 +20,16 @@
 	<!-- endsmoosh -->
 
 	{{> base/analytics }}
-
-</head>
-
-<body class='tk-publico'>
-
 	<script type="text/javascript" src="//www.earthengine.app/javascript/main.js"></script>
 	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
 	<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.1.0/mapbox-gl-compare.js'></script>
 
+</head>
 
-	<!-- {{> base/header }} -->
+<body class='tk-publico'>
 	{{> story/intro }}
-
-	<!-- <main id='content'>
-	</main> -->
-
-	{{!--
-	<script src='{{basepath}}assets/scripts/d3.v5.0.0.min.js'></script> --}}
 	<script src='{{basepath}}assets/scripts/d3.v4.12.0+jetpack.min.js'></script>
 	<script src='bundle.js?version={{timestamp}}' async></script>
-	<!-- <script src='https://pudding.cool/assets/scripts/pudding-footer.js' async></script> -->
 </body>
 
 </html>

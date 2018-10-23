@@ -1,7 +1,20 @@
 
+html,body
+  user-select none
+  margin 0
+  padding 0
+  height 100vh
+  width 100vw
+  overflow hidden
+
+#content
+  overflow hidden
+
 .mapboxgl-ctrl-attrib
   a
     border none
+  &:after
+    display none
 
 .mapboxgl-ctrl-logo
   text-decoration none
@@ -10,16 +23,48 @@
   position absolute
   height 100vh
   width 100vw
-  z-index 1000
+  z-index 10000000
   background linear-gradient(180deg, #f7f7f7 0px, rgba(247, 247, 247, 0.85) 58%, rgba(255, 255, 255, 0) 100%)
   display flex
   flex-direction column
   justify-content center
   align-items center
   font-family 'Atlas Grotesk Web'
+  @media (max-width: 550px)
+    //justify-content flex-start
+    .mountain
+      margin 0 auto
+      margin-top 2rem
+      display none
+    .logo
+      position absolute
+      top 1rem
+      right auto
+      left auto
+      //margin-bottom 1rem
+    .byline
+      position absolute
+      top auto
+      right auto
+      left auto
+      bottom 1rem
+    .prose
+      width 90%
+      padding 0px
+      p
+        font-size 16px
+    .big-text
+      width calc(100% - 30px)
+      font-size 40px
+      text-align center
+      margin 0 auto
+    .sub-text
+      width 90%
+      text-align center
+      margin 0 auto
   .byline
     position absolute
-    top 1.7rem
+    top 2rem
     right 2rem
     p
       font-size 12px
@@ -88,11 +133,12 @@
   position absolute
   top 0px
   right 0px
-  height 100vh
-  width 100vw
+  height 100%
+  width 100%
   transform translate(100%,0%)
   pointer-events none
   background #f7f7f7
+  z-index 100
   #delta-map
     width 100%
     pointer-events all
@@ -246,6 +292,59 @@
   justify-content center
   z-index 1000
   transform translate(0,-200%)
+  .small-logo
+    display none
+  @media (max-width: 830px)
+    justify-content flex-start
+    .logo
+      position relative
+    .top-toggles
+      margin-left 50px
+  @media (max-width: 720px)
+    justify-content center
+    .small-logo
+      display block
+      width 30px
+      border-bottom none
+      margin-right 10px
+      margin-top 7px
+      margin-left 10px
+      svg
+        width 100%
+    .logo
+      position absolute
+      top 4rem
+      left 1rem
+      display none
+    .top-toggles
+      margin 0px
+      display flex
+      width 100%
+      div
+        width 33.33333%
+        &:nth-of-type(2)
+          .top-toggle-active
+            font-size 12px
+            height 50px
+            font-weight 400
+            &:after
+              content ''
+              display none
+        p
+          padding .5rem .5rem
+          height 45px
+          font-size 12px
+          width auto
+          text-align center
+          line-height 1.2
+        .top-toggle-active
+          font-size 12px
+          padding .5rem .5rem
+  @media (max-width: 350px)
+    .top-toggles
+      div
+        p
+          padding .5rem .3rem
   .top-toggles
     display flex
     justify-content center
@@ -267,6 +366,9 @@
         border-bottom-left-radius 5px
         border-bottom-right-radius 5px
         height 53px
+        pointer-events none
+        @media (max-width: 900px)
+          font-size 14px
       p:not(.top-toggle-active)
         &:hover
           color black
@@ -319,8 +421,6 @@
                 margin-right 6px
               &:nth-of-type(2)
                 margin-left 3px
-
-
       &:nth-of-type(2)
         .top-toggle-active
           height auto
@@ -358,7 +458,12 @@
         font-size 14px
         display block
         height 45px
+        cursor hand
+        cursor pointer
         //box-shadow 0px 0px 8px 1px rgba(0, 0, 0, 0.29)
+        @media (max-width: 900px)
+          font-size 13px
+
 
       &:nth-of-type(1)
         p
@@ -384,6 +489,11 @@
   height 100vh
   position relative
   width 0px
+  flex-grow 1
+  @media (max-width: 720px)
+    width 100%
+    height 0px
+    order 2
   .before-toggles
     display none
 .extended
@@ -397,6 +507,27 @@
     //box-shadow 0px 0px 3px 1px rgba(0, 0, 0, 0.21)
     z-index 100
     transform translate(50%,0px)
+    @media (max-width: 720px)
+      right auto
+      height 6px
+      width 100vw
+      transform translate(0px,50%)
+      left auto
+      .before-present-toggles
+        top auto
+        left 50%
+        transform translate(-50%, -100%)
+        width 60px
+        p
+          font-size 14px
+          text-align center
+      .before-historic-toggles
+        top auto
+        left 50%
+        transform translate(0px,-100%)
+        width 60px
+        .before-historic-toggle
+          transform translate(-50%,0px)
     .before-present-toggles
       position absolute
       top 50%
@@ -434,9 +565,6 @@
         font-size 16px
         font-weight 500
 
-#content
-  display flex
-
 .compare-swiper
   display none
 
@@ -456,15 +584,34 @@
   z-index 100
   top .6rem
   right 1rem
+  @media (max-width: 830px)
+    right auto
+    left 1.5rem
+    top 3rem
+    p
+      text-align left
+      line-height 1.4
+  @media (max-width: 730px)
+    top 4rem
+    left auto
+    right 1rem
+    p
+      text-align right
   p
     font-family 'Atlas Grotesk Web'
     font-size 14px
     color black
     font-weight 400
     margin 0px
+    @media (max-width: 1050px)
+      font-size 12px
+      font-weight 500
+    @media (max-width: 1000px)
+      width 100px
+      text-align right
+      line-height 1.2
 
-.map-container
-  display flex
+
 
 .compare
   position absolute
@@ -472,49 +619,33 @@
   left 0
   z-index 100
 
+#main-map
+  flex-grow 0
 .before-map-container, .map, .mapboxgl-canvas, .mapboxgl-canvas-container
   user-select none
   outline none
   &:focus
     outline none
     user-select none
-
-.map
+.map-container
+  overflow hidden
+  position relative
   height 100vh
-  -webkit-touch-callout none
-  -webkit-user-select none
-  -khtml-user-select none
-  -moz-user-select none
-  -ms-user-select none
-  user-select none
-
-
-#main-map
-  flex-grow 1
-
-
+  width 100vw
+  display flex
+  @media (max-width: 720px)
+    flex-direction column
+  .map
+    height 100%
+    //-webkit-touch-callout none
+    //-webkit-user-select none
+    //-khtml-user-select none
+    //-moz-user-select none
+    //-ms-user-select none
+    //user-select none
+    //position relative
+    display block
+    width 100%
 #compare-map
   width 100%
   pointer-events none
-
-body { margin:0; padding:0; }
-#map { position:absolute; top:0; bottom:0; width:100%; }
-
-body {
-    overflow: hidden;
-}
-
-body * {
-   -webkit-touch-callout: none;
-     -webkit-user-select: none;
-        -moz-user-select: none;
-         -ms-user-select: none;
-             user-select: none;
-}
-
-.map {
-    position: relative;
-    display: inline-block;
-    //width: 50%;
-
-}
