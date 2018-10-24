@@ -6,12 +6,10 @@ import locate from './utils/locate';
 function resize() {}
 
 function getStartingCoordinates() {
+	console.log("fetching coordinates");
 	return new Promise(resolve => {
 		const fallback = { latitude: 37.511, longitude: -122.05 };
 		locate('fd4d87f605681c0959c16d9164ab6a4a', (err, response) => {
-
-			console.log(response);
-
 			let user = null;
 			if (err) user = { ...fallback };
 			else {
@@ -30,14 +28,12 @@ function getStartingCoordinates() {
 	});
 }
 
-
 function setupMap(startCoords) {
-	var historicToggles = d3.selectAll(".before-historic-toggle")
-	.on("click",function(d){
-		var isSelected = d3.select(this).classed("before-toggle-active");
-		if(isSelected){
 
-		}
+	console.log("setting up map");
+
+	var historicToggles = d3.selectAll(".before-historic-toggle").on("click",function(d){
+		var isSelected = d3.select(this).classed("before-toggle-active");
 		else{
 			historicToggles.classed("before-toggle-active",false)
 			d3.select(this).classed("before-toggle-active",true);
@@ -81,8 +77,6 @@ function setupMap(startCoords) {
 			return 'Show Change &rsquo;90-&rsquo;15 <span class="legend-change"><span style="color:#bf4d2b;">Decline</span>vs.<span style="color:#357662;">Growth</span></span>'
 		})
 	}
-	// console.timeEnd('locate');
-	// console.log(startCoords);
 
 	var tourStop = 0;
 	var tourObject = [
@@ -516,13 +510,18 @@ function setupMap(startCoords) {
 		mapboxgl.accessToken =
 			'pk.eyJ1IjoiZG9jazQyNDIiLCJhIjoiY2pjazE5eTM2NDl2aDJ3cDUyeDlsb292NiJ9.Jr__XbmAolbLyzPDj7-8kQ';
 
+		var startZoom = 7;
+		if(viewportWidth < 500){
+			startZoom = 6.5
+		}
+
 		console.log(startCoords);
 		map = new mapboxgl.Map({
 			container: 'main-map',
 			// style: 'mapbox://styles/mapbox/light-v9',
 			style: 'mapbox://styles/dock4242/cjnel8krq2ltq2spteciqe2x3?optimize=true',
 			center: [startCoords.lon, startCoords.lat],
-			zoom: 7,
+			zoom: startZoom,
 			pitch: 60, // pitch in degrees
 			bearing: 0, // bearing in degrees
 			maxZoom: 12,
@@ -533,12 +532,6 @@ function setupMap(startCoords) {
 			map.addControl(new mapboxgl.NavigationControl(),"bottom-right");
 		}
 
-
-		//
-		// var combinedMap = new mapboxgl.Compare(map, afterMap, {
-		//     // Set this to enable comparing two maps by mouse movement:
-		//     // mousemove: true
-		// });
 		map.on('load',function(){
 			startButton.classed("start-active",true).select("p").text("View Population").on("click",function(d){
 				setupTourMode();
@@ -555,12 +548,12 @@ function setupMap(startCoords) {
 				getPopulation();
 			}
 		});
-		// get population function
+
 		var updatePopulationTimeout;
 		var timeoutSet = false;
-		map.on('moveend', () => {
 
-			if(viewportWidth > 500){
+		if(viewportWidth > 500){
+			map.on('moveend', () => {
 				var loadText = "Fetching Population Count...";
 				if(currentMode != "present"){
 					loadText = ""
@@ -580,9 +573,10 @@ function setupMap(startCoords) {
 						getPopulation();
 					},1000);
 				}
-			}
+			});
+		}
 
-		});
+
 	}
 	createToggles();
 }
