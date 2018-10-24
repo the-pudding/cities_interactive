@@ -1,7 +1,7 @@
 var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-import geolib from 'geolib';
-import startingCoords from './starting-coords.json';
-import locate from './utils/locate';
+// import geolib from 'geolib';
+// import startingCoords from './starting-coords.json';
+// import locate from './utils/locate';
 
 function resize() {}
 
@@ -32,54 +32,54 @@ function setupMap(startCoords) {
 
 	console.log("setting up map");
 
-	// var historicToggles = d3.selectAll(".before-historic-toggle").on("click",function(d){
-	// 	var isSelected = d3.select(this).classed("before-toggle-active");
-	// 	if(isSelected){
-	//
-	// 	}
-	// 	else{
-	// 		historicToggles.classed("before-toggle-active",false)
-	// 		d3.select(this).classed("before-toggle-active",true);
-	// 		if(+d3.select(this).text == 1975){
-	// 			compareYear = 1975
-	// 			compareMap.remove();
-	// 			makeCompareMap();
-	// 		} else{
-	// 			compareYear = 1990;
-	// 			compareMap.remove();
-	// 			makeCompareMap();
-	// 		}
-	// 	}
-	//
-	// })
-	//
-	// d3.select(".about").select("p").on("click",function(){
-	// 	var aboutScreenVisible = d3.select(".about-screen").classed("about-screen-visible");
-	// 	if(aboutScreenVisible){
-	// 		d3.select(".about-screen").classed("about-screen-visible",false);
-	// 	}
-	// 	else {
-	// 		d3.select(".about-screen").classed("about-screen-visible",true);
-	// 	}
-	// })
-	//
-	// d3.select(".close-button").on("click",function(){
-	// 	var aboutScreenVisible = d3.select(".about-screen").classed("about-screen-visible");
-	// 	if(aboutScreenVisible){
-	// 		d3.select(".about-screen").classed("about-screen-visible",false);
-	// 	}
-	// 	else {
-	// 		d3.select(".about-screen").classed("about-screen-visible",true);
-	// 	}
-	// });
+	var historicToggles = d3.selectAll(".before-historic-toggle").on("click",function(d){
+		var isSelected = d3.select(this).classed("before-toggle-active");
+		if(isSelected){
 
-	// if(viewportWidth < 720){
-	// 	d3.select("#present-button").select("p").html("Population<br>in 2015")
-	// 	d3.select("#compare-button").select("p").html("Compare<br>to 1990")
-	// 	d3.select("#delta-button").select("p").html(function(){
-	// 		return 'Show Change &rsquo;90-&rsquo;15 <span class="legend-change"><span style="color:#bf4d2b;">Decline</span>vs.<span style="color:#357662;">Growth</span></span>'
-	// 	})
-	// }
+		}
+		else{
+			historicToggles.classed("before-toggle-active",false)
+			d3.select(this).classed("before-toggle-active",true);
+			if(+d3.select(this).text == 1975){
+				compareYear = 1975
+				compareMap.remove();
+				makeCompareMap();
+			} else{
+				compareYear = 1990;
+				compareMap.remove();
+				makeCompareMap();
+			}
+		}
+
+	})
+
+	d3.select(".about").select("p").on("click",function(){
+		var aboutScreenVisible = d3.select(".about-screen").classed("about-screen-visible");
+		if(aboutScreenVisible){
+			d3.select(".about-screen").classed("about-screen-visible",false);
+		}
+		else {
+			d3.select(".about-screen").classed("about-screen-visible",true);
+		}
+	})
+
+	d3.select(".close-button").on("click",function(){
+		var aboutScreenVisible = d3.select(".about-screen").classed("about-screen-visible");
+		if(aboutScreenVisible){
+			d3.select(".about-screen").classed("about-screen-visible",false);
+		}
+		else {
+			d3.select(".about-screen").classed("about-screen-visible",true);
+		}
+	});
+
+	if(viewportWidth < 720){
+		d3.select("#present-button").select("p").html("Population<br>in 2015")
+		d3.select("#compare-button").select("p").html("Compare<br>to 1990")
+		d3.select("#delta-button").select("p").html(function(){
+			return 'Show Change &rsquo;90-&rsquo;15 <span class="legend-change"><span style="color:#bf4d2b;">Decline</span>vs.<span style="color:#357662;">Growth</span></span>'
+		})
+	}
 
 	var tourStop = 0;
 	var tourObject = [
@@ -338,6 +338,13 @@ function setupMap(startCoords) {
 	}
 	function flyToTour(location,direction){
 
+			if(currentMode != "present"){
+				changeView("present-button");
+				var topTogglesContainer = d3.select(".top-toggles");
+				topTogglesContainer.selectAll("div").select("p").classed("top-toggle-active",false);
+				d3.select("#present-button").select("p").classed("top-toggle-active",true);
+			}
+
 			if(direction=="backward"){
 				if(tourStop == tourObject.length - 1){
 					changeView("present-button");
@@ -417,7 +424,8 @@ function setupMap(startCoords) {
 			pitch: map.getPitch(), // pitch in degrees
 			bearing: map.getBearing(), // bearing in degrees
 			maxZoom: maxZoomCompare,
-			minZoom: 2
+			minZoom: 2,
+			maxTileCacheSize: 1
 		});
 
 		compareMap.on("load",function(d){
@@ -601,8 +609,8 @@ function setupMap(startCoords) {
 }
 
 function init() {
-	// setupMap({"lon":"-122.4374","lat":"37.7599"});
-	getStartingCoordinates().then(setupMap);
+	setupMap({"lon":"-0.118092","lat":"51.509865"});
+	// getStartingCoordinates().then(setupMap);
 }
 
 export default { init, resize };
