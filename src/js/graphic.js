@@ -541,7 +541,7 @@ function setupMap(startCoords) {
 			maxZoomMain = 6.99
 		}
 
-		var maxtilecache = 3;
+		var maxtilecache = 0;
 		console.log(maxtilecache);
 
 		map = new mapboxgl.Map({
