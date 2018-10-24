@@ -541,6 +541,9 @@ function setupMap(startCoords) {
 			maxZoomMain = 6.99
 		}
 
+		var maxtilecache = 1;
+		console.log(maxtilecache);
+
 		map = new mapboxgl.Map({
 			container: 'main-map',
 			// style: 'mapbox://styles/mapbox/light-v9',
@@ -551,7 +554,7 @@ function setupMap(startCoords) {
 			bearing: 0, // bearing in degrees
 			maxZoom: maxZoomMain,
 			minZoom: 2,
-			maxTileCacheSize: 1
+			maxTileCacheSize: maxtilecache
 		});
 
 		if(viewportWidth > 500){
