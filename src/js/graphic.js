@@ -1,7 +1,7 @@
 var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-// import geolib from 'geolib';
-// import startingCoords from './starting-coords.json';
-// import locate from './utils/locate';
+import geolib from 'geolib';
+import startingCoords from './starting-coords.json';
+import locate from './utils/locate';
 
 function resize() {}
 
@@ -9,6 +9,9 @@ function getStartingCoordinates() {
 	return new Promise(resolve => {
 		const fallback = { latitude: 37.511, longitude: -122.05 };
 		locate('fd4d87f605681c0959c16d9164ab6a4a', (err, response) => {
+
+			console.log(response);
+
 			let user = null;
 			if (err) user = { ...fallback };
 			else {
@@ -29,6 +32,47 @@ function getStartingCoordinates() {
 
 
 function setupMap(startCoords) {
+	var historicToggles = d3.selectAll(".before-historic-toggle")
+	.on("click",function(d){
+		var isSelected = d3.select(this).classed("before-toggle-active");
+		if(isSelected){
+
+		}
+		else{
+			historicToggles.classed("before-toggle-active",false)
+			d3.select(this).classed("before-toggle-active",true);
+			if(+d3.select(this).text == 1975){
+				compareYear = 1975
+				compareMap.remove();
+				makeCompareMap();
+			} else{
+				compareYear = 1990;
+				compareMap.remove();
+				makeCompareMap();
+			}
+		}
+
+	})
+
+	d3.select(".about").select("p").on("click",function(){
+		var aboutScreenVisible = d3.select(".about-screen").classed("about-screen-visible");
+		if(aboutScreenVisible){
+			d3.select(".about-screen").classed("about-screen-visible",false);
+		}
+		else {
+			d3.select(".about-screen").classed("about-screen-visible",true);
+		}
+	})
+
+	d3.select(".close-button").on("click",function(){
+		var aboutScreenVisible = d3.select(".about-screen").classed("about-screen-visible");
+		if(aboutScreenVisible){
+			d3.select(".about-screen").classed("about-screen-visible",false);
+		}
+		else {
+			d3.select(".about-screen").classed("about-screen-visible",true);
+		}
+	});
 
 	if(viewportWidth < 720){
 		d3.select("#present-button").select("p").html("Population<br>in 2015")
@@ -43,14 +87,14 @@ function setupMap(startCoords) {
 	var tourStop = 0;
 	var tourObject = [
 		{
-			text:"<b>Take a tour.</b> Note: the taller the block, the more people it represents. Let's see the US.</b>",
+			text:"<b>Take a tour.</b> Each block represents 250 to 5,000 sq. meters. Taller blocks represent more people.",
 			location:{
 
 			},
 			button:"Fly to US"
 		},
 		{
-			text:"The US has about 320 million people and about 10 cities over 1 million. Let's gander at China.",
+			text:"The US is home to about 320 million people. Ten cities top 1 million. Now let's gander at China.",
 			location:{
 				center:[-92.541666,29.895985],
 				zoom:4,
@@ -65,7 +109,7 @@ function setupMap(startCoords) {
 			button:"Fly to China"
 		},
 		{
-			text:"China now has 100 cities over 1M. The cluster around Hong Kong is practically three NYCs.",
+			text:"China has 100 cities with over 1 million people. The cluster around Hong Kong is roughly three NYCs.",
 			location:{
 				center:[120.887528,29.174370],
 				zoom:4,
@@ -80,7 +124,7 @@ function setupMap(startCoords) {
 			button:"Fly to Hong Kong"
 		},
 		{
-			text:"This is the Pearl River Delta, where three 10M+ cities are merging.",
+			text:"China’s Pearl River Delta is becoming a megalopolis where three 10 million+ cities are merging.",
 			location:{
 				center:[113.892168,22.922493],
 				zoom:8.01,
@@ -94,7 +138,7 @@ function setupMap(startCoords) {
 			button:"Fly to Africa"
 		},
 		{
-			text:"What happened in Asia is now set to happen in Africa. Today 1 in 6 people live on the continent.",
+			text:"Like Asia, Africa is expected to see similar growth. Today 1 in 6 people live on the continent.",
 			location:{
 				center:[27.90,-1.89],
 				zoom:3.97,
@@ -108,7 +152,7 @@ function setupMap(startCoords) {
 			button:"Fly to Lagos"
 		},
 		{
-			text:"By 2100, the world might be 1 in 3 African. This is Lagos, 13M people.",
+			text:"By 2100, it will be 1 in 3. This is the coastal city of Lagos, home to 13 million people.",
 			location:{
 				center:[3.335080,6.426115],
 				zoom:6.86,
@@ -122,7 +166,7 @@ function setupMap(startCoords) {
 			button:"Fly to Kinshasa"
 		},
 		{
-			text:"Kinshasa has over 12M people, but grew differently, with few major roads or smaller cities connected to it.",
+			text:"And this is another one Africa's megacities: Kinshasa, with over 12 million people.",
 			location:{
 				center:[15.500771,-4.345327],
 				zoom:7.63,
@@ -136,7 +180,7 @@ function setupMap(startCoords) {
 			button:"Shrinking Cities"
 		},
 		{
-			text:"This is the population change from 1990 to 2015. Population decline is in red, notably in city centers of America's rustbelt.",
+			text:"Shown in red are cities that declined in population from 1990 to 2015, such as Detroit and Cleveland.",
 			location:{
 				center:[-83.539628,40.565428],
 				zoom:7.58,
@@ -150,6 +194,8 @@ function setupMap(startCoords) {
 			button:""
 		}
 	]
+
+	var compareYear = 1990;
 
 	var tourContainer = d3.select(".tour-container");
 	var tourHidden = true;
@@ -349,14 +395,22 @@ function setupMap(startCoords) {
 		})
 	}
 	function makeCompareMap() {
+
+		var compareStyle = "mapbox://styles/dock4242/cjnl0k08b88ai2slsjxzk0jii?optimize=true"
+		if(compareYear == 1975){
+			compareStyle = "mapbox://styles/dock4242/cjnn7622h02ph2smpyw7dhq4y?optimize=true"
+		}
+
 		compareMap = new mapboxgl.Map({
 			container: 'compare-map',
 			// style: 'mapbox://styles/mapbox/dark-v9',
-			style: 'mapbox://styles/dock4242/cjnl0k08b88ai2slsjxzk0jii?optimize=true',
+			style: compareStyle,
 			center: map.getCenter(),
 			zoom: map.getZoom(),
 			pitch: map.getPitch(), // pitch in degrees
 			bearing: map.getBearing(), // bearing in degrees
+			maxZoom: 12,
+			minZoom: 2
 		});
 
 		compareMap.on("load",function(d){
@@ -400,7 +454,9 @@ function setupMap(startCoords) {
 			center: centerDelta,
 			zoom: zoomDelta,
 			pitch: pitchDelta, // pitch in degrees
-			bearing: bearingDelta // bearing in degrees
+			bearing: bearingDelta, // bearing in degrees
+			maxZoom: 12,
+			minZoom: 2
 		});
 
 		deltaMap.addControl(new mapboxgl.NavigationControl(),"bottom-right");
@@ -432,10 +488,20 @@ function setupMap(startCoords) {
 		const p = d3.precisionPrefix(1e5, 1.3e6);
 		const f = d3.formatPrefix(`.${p}`, 1.3e6);
 		const toRoute = meanDictionary.evaluate(d => {
-			const total_pop = d.population_count;
-			d3.select('.population')
-				.select('p')
-				.text(f(total_pop)+" people reside on-screen");
+			console.log(d);
+			if(d){
+				const total_pop = d.population_count;
+				d3.select('.population')
+					.select('p')
+					.text(f(total_pop)+" people reside on screen");
+			}
+			else{
+				d3.select('.population')
+					.select('p')
+					.text("");
+			}
+
+
 		});
 	}
 
@@ -449,9 +515,11 @@ function setupMap(startCoords) {
 			// style: 'mapbox://styles/mapbox/light-v9',
 			style: 'mapbox://styles/dock4242/cjnel8krq2ltq2spteciqe2x3?optimize=true',
 			center: [startCoords.lon, startCoords.lat],
-			zoom: 8,
+			zoom: 7,
 			pitch: 60, // pitch in degrees
-			bearing: 0 // bearing in degrees
+			bearing: 0, // bearing in degrees
+			maxZoom: 12,
+			minZoom: 2
 		});
 
 		map.addControl(new mapboxgl.NavigationControl(),"bottom-right");
@@ -462,7 +530,7 @@ function setupMap(startCoords) {
 		//     // mousemove: true
 		// });
 		map.on('load',function(){
-			startButton.classed("start-active",true).select("p").text("See Population Data").on("click",function(d){
+			startButton.classed("start-active",true).select("p").text("View Population").on("click",function(d){
 				setupTourMode();
 				startScreen.transition().duration(500).style("opacity",0).on("end",function(d){
 					d3.select(".top-header").transition().duration(500).delay(100).style("transform","translate(0px,0px)")
@@ -483,6 +551,7 @@ function setupMap(startCoords) {
 			if(currentMode != "present"){
 				loadText = ""
 			}
+			console.log(map.getZoom());
 
 			d3.select('.population')
 				.select('p')
@@ -505,8 +574,8 @@ function setupMap(startCoords) {
 }
 
 function init() {
-	setupMap({"lon":"-122.4374","lat":"37.7599"});
-	// getStartingCoordinates().then(setupMap);
+	// setupMap({"lon":"-122.4374","lat":"37.7599"});
+	getStartingCoordinates().then(setupMap);
 }
 
 export default { init, resize };

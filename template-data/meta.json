@@ -1,14 +1,14 @@
 {
-  "title": "Title Case Headline Goes Here",
-  "description": "Your dek goes here. It is probably one or two sentences that succinctly describe more explicitly what the story will be about.",
-  "url": "https://pudding.cool/year/month/name/",
-  "keywords": "tk",
-  "imgFacebook": "https://pudding.cool/year/month/name/assets/social/social-facebook.jpg",
-  "imgTwitter": "https://pudding.cool/year/month/name/assets/social/social-twitter.jpg",
+  "title": "Human Terrain",
+  "description": "Visualizing the World’s Population, in 3D",
+  "url": "https://pudding.cool/2018/10/city_3d",
+  "keywords": "population",
+  "imgFacebook": "https://pudding.cool/year/month/name/assets/social/social_facebook.png",
+  "imgTwitter": "https://pudding.cool/year/month/name/assets/social/social_twitter.png",
   "author": {
-    "name": "Author Name",
-    "url": "https://twitter.com/puddingviz",
-    "twitterHandle": "@puddingviz"
+    "name": "Matt Daniels",
+    "url": "https://twitter.com/matthew_daniels",
+    "twitterHandle": "@matthew_daniels"
   },
-  "analytics": ""
+  "analytics": "UA-90567923-1"
 }

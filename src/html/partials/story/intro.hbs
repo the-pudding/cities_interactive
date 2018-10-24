@@ -1,8 +1,22 @@
 <main id="content">
+	<div class="about-screen">
+		<div class="close-button">
+			<svg xlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+		</div>
+		<div class="about-screen-prose">
+			<p>This project wields data from the <a href="https://ghslsys.jrc.ec.europa.eu/index.php">Global Human Settlement Layer</a>, which uses &ldquo;satellite imagery, census data, and volunteered geographic information&rdquo; to create population density maps.</p>
+			<p>In parts of the world where census data is unreliable (e.g., India, China), population density was visibly noisy on the maps.</p>
+			<p>Using this data for research purposes has a number of caveats, and most are very well detailed in <a href="https://www.tandfonline.com/doi/full/10.1080/17445647.2017.1400476">this paper in the Journal of Maps</a> by Duncan Smith.</p>
+			<p>The data is processed using Google Earth Engine (example script is <a href="https://code.earthengine.google.com/e9e22c289d4a9b3b3b0a39ecdfba261c">here</a>).</p>
+			<p>The visualization was inspired by Alasdair Rae&rsquo;s <a href="http://www.statsmapsnpix.com/2016/10/the-global-human-settlement-layer.html">blog posts</a>, where explained how to visualize snapshots of the data.</p>
+			<p>A more detailed explanation of the data processing is forthcoming.</p>
+		</div>
+	</div>
 	<div class="start-screen">
 		<div class="logo">
 			@@include('logo.svg')
 		</div>
+
 		<div class="byline">
 			<p>By <a href="https://pudding.cool/author/matt-daniels/">Matt Daniels</a></p>
 		</div>
@@ -30,6 +44,7 @@
 	</div>
 
 	<div class="top-header">
+
 		<a href="/" class="small-logo">
 	      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 225.858 254.917" enable-background="new 0 0 225.858 254.917" xml:space="preserve">
 	          <g id="left">
@@ -83,6 +98,9 @@
 		<a href='https://pudding.cool' target='_blank' class='logo'>
 			@@include('logo.svg')
 		</a>
+		<div class="about">
+			<p>About this Project</p>
+		</div>
 		<div class="top-toggles">
 			<div id="compare-button"><p>Compare to 1990</p></div>
 			<div id="present-button"><p class="top-toggle-active">Population Present Day</p></div>
@@ -111,7 +129,6 @@
 				<div class="before-historic-toggles">
 					<p class="before-historic-toggle before-toggle-active">1990</p>
 					<p class="before-historic-toggle">1975</p>
-					<p class="before-historic-toggle">2000</p>
 				</div>
 			</div>
 			<div id='compare-map' class='map'></div>
