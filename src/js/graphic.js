@@ -1,7 +1,7 @@
 var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-// import geolib from 'geolib';
-// import startingCoords from './starting-coords.json';
-// import locate from './utils/locate';
+import geolib from 'geolib';
+import startingCoords from './starting-coords.json';
+import locate from './utils/locate';
 
 function resize() {}
 
@@ -541,9 +541,6 @@ function setupMap(startCoords) {
 			maxZoomMain = 6.99
 		}
 
-		var maxtilecache = 0;
-		console.log(maxtilecache);
-
 		map = new mapboxgl.Map({
 			container: 'main-map',
 			// style: 'mapbox://styles/mapbox/light-v9',
@@ -553,8 +550,7 @@ function setupMap(startCoords) {
 			pitch: 60, // pitch in degrees
 			bearing: 0, // bearing in degrees
 			maxZoom: maxZoomMain,
-			minZoom: 2,
-			maxTileCacheSize: maxtilecache
+			minZoom: 2
 		});
 
 		if(viewportWidth > 500){
@@ -612,8 +608,8 @@ function setupMap(startCoords) {
 }
 
 function init() {
-	setupMap({"lon":"114.149139","lat":"22.286394"});
-	// getStartingCoordinates().then(setupMap);
+	// setupMap({"lon":"114.149139","lat":"22.286394"});
+	getStartingCoordinates().then(setupMap);
 }
 
 export default { init, resize };
