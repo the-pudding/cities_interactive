@@ -424,8 +424,7 @@ function setupMap(startCoords) {
 			pitch: map.getPitch(), // pitch in degrees
 			bearing: map.getBearing(), // bearing in degrees
 			maxZoom: maxZoomCompare,
-			minZoom: 2,
-			maxTileCacheSize: 4
+			minZoom: 2
 		});
 
 		compareMap.on("load",function(d){
@@ -551,7 +550,8 @@ function setupMap(startCoords) {
 			pitch: 60, // pitch in degrees
 			bearing: 0, // bearing in degrees
 			maxZoom: maxZoomMain,
-			minZoom: 2
+			minZoom: 2,
+			maxTileCacheSize: 1
 		});
 
 		if(viewportWidth > 500){
