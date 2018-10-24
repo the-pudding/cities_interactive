@@ -32,54 +32,54 @@ function setupMap(startCoords) {
 
 	console.log("setting up map");
 
-	var historicToggles = d3.selectAll(".before-historic-toggle").on("click",function(d){
-		var isSelected = d3.select(this).classed("before-toggle-active");
-		if(isSelected){
+	// var historicToggles = d3.selectAll(".before-historic-toggle").on("click",function(d){
+	// 	var isSelected = d3.select(this).classed("before-toggle-active");
+	// 	if(isSelected){
+	//
+	// 	}
+	// 	else{
+	// 		historicToggles.classed("before-toggle-active",false)
+	// 		d3.select(this).classed("before-toggle-active",true);
+	// 		if(+d3.select(this).text == 1975){
+	// 			compareYear = 1975
+	// 			compareMap.remove();
+	// 			makeCompareMap();
+	// 		} else{
+	// 			compareYear = 1990;
+	// 			compareMap.remove();
+	// 			makeCompareMap();
+	// 		}
+	// 	}
+	//
+	// })
+	//
+	// d3.select(".about").select("p").on("click",function(){
+	// 	var aboutScreenVisible = d3.select(".about-screen").classed("about-screen-visible");
+	// 	if(aboutScreenVisible){
+	// 		d3.select(".about-screen").classed("about-screen-visible",false);
+	// 	}
+	// 	else {
+	// 		d3.select(".about-screen").classed("about-screen-visible",true);
+	// 	}
+	// })
+	//
+	// d3.select(".close-button").on("click",function(){
+	// 	var aboutScreenVisible = d3.select(".about-screen").classed("about-screen-visible");
+	// 	if(aboutScreenVisible){
+	// 		d3.select(".about-screen").classed("about-screen-visible",false);
+	// 	}
+	// 	else {
+	// 		d3.select(".about-screen").classed("about-screen-visible",true);
+	// 	}
+	// });
 
-		}
-		else{
-			historicToggles.classed("before-toggle-active",false)
-			d3.select(this).classed("before-toggle-active",true);
-			if(+d3.select(this).text == 1975){
-				compareYear = 1975
-				compareMap.remove();
-				makeCompareMap();
-			} else{
-				compareYear = 1990;
-				compareMap.remove();
-				makeCompareMap();
-			}
-		}
-
-	})
-
-	d3.select(".about").select("p").on("click",function(){
-		var aboutScreenVisible = d3.select(".about-screen").classed("about-screen-visible");
-		if(aboutScreenVisible){
-			d3.select(".about-screen").classed("about-screen-visible",false);
-		}
-		else {
-			d3.select(".about-screen").classed("about-screen-visible",true);
-		}
-	})
-
-	d3.select(".close-button").on("click",function(){
-		var aboutScreenVisible = d3.select(".about-screen").classed("about-screen-visible");
-		if(aboutScreenVisible){
-			d3.select(".about-screen").classed("about-screen-visible",false);
-		}
-		else {
-			d3.select(".about-screen").classed("about-screen-visible",true);
-		}
-	});
-
-	if(viewportWidth < 720){
-		d3.select("#present-button").select("p").html("Population<br>in 2015")
-		d3.select("#compare-button").select("p").html("Compare<br>to 1990")
-		d3.select("#delta-button").select("p").html(function(){
-			return 'Show Change &rsquo;90-&rsquo;15 <span class="legend-change"><span style="color:#bf4d2b;">Decline</span>vs.<span style="color:#357662;">Growth</span></span>'
-		})
-	}
+	// if(viewportWidth < 720){
+	// 	d3.select("#present-button").select("p").html("Population<br>in 2015")
+	// 	d3.select("#compare-button").select("p").html("Compare<br>to 1990")
+	// 	d3.select("#delta-button").select("p").html(function(){
+	// 		return 'Show Change &rsquo;90-&rsquo;15 <span class="legend-change"><span style="color:#bf4d2b;">Decline</span>vs.<span style="color:#357662;">Growth</span></span>'
+	// 	})
+	// }
 
 	var tourStop = 0;
 	var tourObject = [
@@ -571,6 +571,7 @@ function setupMap(startCoords) {
 		var timeoutSet = false;
 
 		if(viewportWidth > 500){
+			console.log("making moveend stuff");
 			map.on('moveend', () => {
 				var loadText = "Fetching Population Count...";
 				if(currentMode != "present"){
