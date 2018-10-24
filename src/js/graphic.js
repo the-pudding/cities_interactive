@@ -34,6 +34,9 @@ function setupMap(startCoords) {
 
 	var historicToggles = d3.selectAll(".before-historic-toggle").on("click",function(d){
 		var isSelected = d3.select(this).classed("before-toggle-active");
+		if(isSelected){
+
+		}
 		else{
 			historicToggles.classed("before-toggle-active",false)
 			d3.select(this).classed("before-toggle-active",true);
