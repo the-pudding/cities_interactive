@@ -296,9 +296,14 @@ function setupMap(startCoords) {
 				.select('p')
 				.text(loadText);
 
-			var populationTimeout = setTimeout(function(){
-				getPopulation();
-			},1000);
+
+			if(viewportWidth > 500){
+				var populationTimeout = setTimeout(function(){
+					getPopulation();
+				},1000);
+			}
+
+
 		} else{
 			d3.select('.population')
 				.select('p')
@@ -458,8 +463,10 @@ function setupMap(startCoords) {
 			maxZoom: 12,
 			minZoom: 2
 		});
+		if(viewportWidth < 500){
+			deltaMap.addControl(new mapboxgl.NavigationControl(),"bottom-right");
+		}
 
-		deltaMap.addControl(new mapboxgl.NavigationControl(),"bottom-right");
 	}
 	function getPopulation() {
 		const bounds = map.getBounds();
@@ -522,7 +529,10 @@ function setupMap(startCoords) {
 			minZoom: 2
 		});
 
-		map.addControl(new mapboxgl.NavigationControl(),"bottom-right");
+		if(viewportWidth > 500){
+			map.addControl(new mapboxgl.NavigationControl(),"bottom-right");
+		}
+
 
 		//
 		// var combinedMap = new mapboxgl.Compare(map, afterMap, {
@@ -541,33 +551,37 @@ function setupMap(startCoords) {
 					startScreen.remove();
 				});
 			});
-			getPopulation();
+			if(viewportWidth > 500){
+				getPopulation();
+			}
 		});
 		// get population function
 		var updatePopulationTimeout;
 		var timeoutSet = false;
 		map.on('moveend', () => {
-			var loadText = "Fetching Population Count...";
-			if(currentMode != "present"){
-				loadText = ""
-			}
-			console.log(map.getZoom());
 
-			d3.select('.population')
-				.select('p')
-				.text(loadText);
+			if(viewportWidth > 500){
+				var loadText = "Fetching Population Count...";
+				if(currentMode != "present"){
+					loadText = ""
+				}
+				d3.select('.population')
+					.select('p')
+					.text(loadText);
 
-			if(timeoutSet){
-				clearTimeout(updatePopulationTimeout);
+				if(timeoutSet){
+					clearTimeout(updatePopulationTimeout);
+				}
+				else{
+					timeoutSet = true;
+				}
+				if(currentMode == "present"){
+					updatePopulationTimeout = setTimeout(function(){
+						getPopulation();
+					},1000);
+				}
 			}
-			else{
-				timeoutSet = true;
-			}
-			if(currentMode == "present"){
-				updatePopulationTimeout = setTimeout(function(){
-					getPopulation();
-				},1000);
-			}
+
 		});
 	}
 	createToggles();
