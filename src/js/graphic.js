@@ -403,6 +403,11 @@ function setupMap(startCoords) {
 			compareStyle = "mapbox://styles/dock4242/cjnn7622h02ph2smpyw7dhq4y?optimize=true"
 		}
 
+		var maxZoomCompare = 12;
+		if(viewportWidth < 500){
+			maxZoomCompare = 6.99
+		}
+
 		compareMap = new mapboxgl.Map({
 			container: 'compare-map',
 			// style: 'mapbox://styles/mapbox/dark-v9',
@@ -411,7 +416,7 @@ function setupMap(startCoords) {
 			zoom: map.getZoom(),
 			pitch: map.getPitch(), // pitch in degrees
 			bearing: map.getBearing(), // bearing in degrees
-			maxZoom: 12,
+			maxZoom: maxZoomCompare,
 			minZoom: 2
 		});
 
@@ -448,6 +453,12 @@ function setupMap(startCoords) {
 			bearingDelta = tourData.bearing;
 		}
 
+		var maxZoomDelta = 12;
+		if(viewportWidth < 500){
+			maxZoomDelta = 6.99
+		}
+
+
 		deltaMap = new mapboxgl.Map({
 			container: 'delta-map',
 			//style: 'mapbox://styles/mapbox/cjnkyuronejw32snahlu7a5zc?optimize=true',
@@ -457,7 +468,7 @@ function setupMap(startCoords) {
 			zoom: zoomDelta,
 			pitch: pitchDelta, // pitch in degrees
 			bearing: bearingDelta, // bearing in degrees
-			maxZoom: 12,
+			maxZoom: maxZoomDelta,
 			minZoom: 2
 		});
 		if(viewportWidth < 500){
@@ -518,7 +529,11 @@ function setupMap(startCoords) {
 			startZoom = 6.5
 		}
 
-		console.log(startCoords);
+		var maxZoomMain = 12;
+		if(viewportWidth < 500){
+			maxZoomMain = 6.99
+		}
+
 		map = new mapboxgl.Map({
 			container: 'main-map',
 			// style: 'mapbox://styles/mapbox/light-v9',
@@ -527,7 +542,7 @@ function setupMap(startCoords) {
 			zoom: startZoom,
 			pitch: 60, // pitch in degrees
 			bearing: 0, // bearing in degrees
-			maxZoom: 12,
+			maxZoom: maxZoomMain,
 			minZoom: 2
 		});
 
