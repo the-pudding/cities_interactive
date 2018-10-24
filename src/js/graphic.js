@@ -425,7 +425,7 @@ function setupMap(startCoords) {
 			bearing: map.getBearing(), // bearing in degrees
 			maxZoom: maxZoomCompare,
 			minZoom: 2,
-			maxTileCacheSize: 0
+			maxTileCacheSize: 4
 		});
 
 		compareMap.on("load",function(d){
