@@ -425,7 +425,7 @@ function setupMap(startCoords) {
 			bearing: map.getBearing(), // bearing in degrees
 			maxZoom: maxZoomCompare,
 			minZoom: 2,
-			maxTileCacheSize: 1
+			maxTileCacheSize: 0
 		});
 
 		compareMap.on("load",function(d){
@@ -609,7 +609,7 @@ function setupMap(startCoords) {
 }
 
 function init() {
-	setupMap({"lon":"-0.118092","lat":"51.509865"});
+	setupMap({"lon":"114.149139","lat":"22.286394"});
 	// getStartingCoordinates().then(setupMap);
 }
 
