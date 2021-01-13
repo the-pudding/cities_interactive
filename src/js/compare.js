@@ -334,7 +334,7 @@ function setupMap(startCoords) {
 	}
 	if (makeMap) {
 		mapboxgl.accessToken =
-			'pk.eyJ1IjoiZG9jazQyNDIiLCJhIjoiY2pjazE5eTM2NDl2aDJ3cDUyeDlsb292NiJ9.Jr__XbmAolbLyzPDj7-8kQ';
+			'pk.eyJ1IjoiZG9jazQyNDIiLCJhIjoiY2tqdXA5OGJoMDFtbzJ0bnEwbGl4cG0zYiJ9.6u_4MspNw0Y7jd8q5zr57A';
 		function getPopulation() {
 			console.log('fetching population');
 			const bounds = map.getBounds();
@@ -397,7 +397,7 @@ function setupMap(startCoords) {
 					startScreen.remove();
 				});
 			});
-			getPopulation();
+			// getPopulation();
 		});
 		// get population function
 		var updatePopulationTimeout;
@@ -417,7 +417,7 @@ function setupMap(startCoords) {
 			}
 
 			updatePopulationTimeout = setTimeout(function(){
-				getPopulation();
+				// getPopulation();
 			},1000);
 
 		});

@@ -528,8 +528,8 @@ function setupMap(startCoords) {
 	}
 
 	if (makeMap) {
-		mapboxgl.accessToken =
-			'pk.eyJ1IjoiZG9jazQyNDIiLCJhIjoiY2pjazE5eTM2NDl2aDJ3cDUyeDlsb292NiJ9.Jr__XbmAolbLyzPDj7-8kQ';
+
+		mapboxgl.accessToken = 'pk.eyJ1IjoiZG9jazQyNDIiLCJhIjoiY2tqdXA5OGJoMDFtbzJ0bnEwbGl4cG0zYiJ9.6u_4MspNw0Y7jd8q5zr57A';
 
 		var startZoom = 7;
 		if(viewportWidth < 500){
@@ -570,7 +570,7 @@ function setupMap(startCoords) {
 				});
 			});
 			if(viewportWidth > 500){
-				getPopulation();
+				// getPopulation();
 			}
 		});
 
@@ -596,7 +596,7 @@ function setupMap(startCoords) {
 				}
 				if(currentMode == "present"){
 					updatePopulationTimeout = setTimeout(function(){
-						getPopulation();
+						// getPopulation();
 					},1000);
 				}
 			});
