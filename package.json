@@ -36,6 +36,7 @@
     "gulp-file-include": "^2.0.1",
     "gulp-hb": "^7.0.1",
     "gulp-htmlmin": "^5.0.1",
+    "gulp-install": "^1.1.0",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.0",
     "gulp-rename": "^1.4.0",
